@@ -5,53 +5,39 @@
 % Universidad, Facultad
 \begin{titlepage}
 \selectlanguage{spanish}
-\begin{center}
-\textbf{\begin{huge}
-\universidad \\
-\end{huge}}
-\bigskip 
-\begin{LARGE}
-\facultad \\
-\end{LARGE}
-\end{center}
 
-\bigskip
-\bigskip
-
-%
-% Imágenes (logos) izquierdo y derecho
-%
 \begin{figure}[h]
 	\begin{center}
 		\includegraphics[scale=0.35]{\logoizq}
-    \hspace{1cm}
+		\hspace{10cm}
 		\includegraphics[scale=0.4]{\logoder}
 	\end{center}	
 \end{figure}
 
-\bigskip
-\bigskip
-\bigskip
+\begin{center}
+\textbf{\begin{LARGE}
+\textsc{\universidad} \\
+\end{LARGE}}
+\bigskip 
+\begin{LARGE}
+\textsc{\textbf{\facultad}} \\
+\end{LARGE}
+\end{center}
+
 
 % Grado
 \begin{center}
-\begin{large}
-\textbf{\grado}\\
-\end{large}
+\begin{Large}
+\textsc{\master}\\
+\end{Large}
 \end{center}
 
 \bigskip
-
-\textbf{\begin{center}
-\begin{huge}
-\MakeUppercase{Trabajo de Fin de Grado}
-\end{huge}
-\end{center}}
-
+\bigskip
 \bigskip
 \bigskip
 
-% Nombre del TFG
+% Nombre del TFM
 \begin{center}
 \textbf{\begin{large}
 \MakeUppercase{\nombretrabajo}\\
@@ -61,18 +47,25 @@
 % Nombre del autor
 \vspace{\fill}
 \begin{center}
-\textbf{\nombreautor}\\
-% Tutor
-\textbf{Tutor: \nombretutor}\\
-% Ponente, si está definido en main.tex
-\ifcsname nombreponente\endcsname
-\textbf{Ponente: \nombreponente}\\
-\fi
+	\begin{large}
+		\textbf{Autor: \nombreautor}\\
+		% Tutor
+		\bigskip
+		\textbf{Director: \nombredirector}\\
+		% Ponente, si está definido en main.tex
+		\ifcsname nombrecodirector\endcsname
+		\bigskip
+		\textbf{Co-director: \nombrecodirector}\\
+		\fi
+		
+		\bigskip
+		\bigskip
+		\bigskip
+		
+		% Fecha
+		\textbf{\lugar, \fecha}\\
+	\end{large}
 
-\bigskip
-
-% Fecha
-\textbf{\fecha}\\
 \end{center}
 \end{titlepage}
 
@@ -96,9 +89,9 @@
 
 % Nombre del autor y del tutor
 \large Autor: \nombreautor \\*
-\large Tutor: \nombretutor \\*
-\ifcsname nombreponente\endcsname
-\large Ponente: \nombreponente\\
+\large Director: \nombredirector \\*
+\ifcsname nombrecodirector\endcsname
+\large Co-director: \nombrecodirector\\
 \fi
 
 \vfill

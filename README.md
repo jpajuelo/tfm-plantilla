@@ -1,6 +1,6 @@
-# Plantilla TFG [Archived]
+# Plantilla TFM
 
-Plantilla en *LaTeX* para el **Trabajo de Fin de Grado** (EPS-UAM). Contiene la estructura básica para la memoria del mismo, siguiendo la [normativa del curso 2015-2016](2015-2016/).
+Plantilla en *LaTeX* para la **Tesis Fin de Máster** (UPM). Contiene la estructura básica para la memoria del mismo, siguiendo la [guía de elaboración](2015-2016/).
 
 - Para completar y adaptar la plantilla, busca en el proyecto la palabra clave `TODO` y sobreescribe el nombre de tu trabajo, tutor, etc.
 - Para manejar la bibliografía se puede utilizar [JabRef](https://github.com/JabRef/jabref), editando [src/bibliografia.bib](src/bibliografia.bib)
@@ -16,9 +16,9 @@ Instalar con *aptitude*
 $ sudo apt-get install texlive-full
 ```
 ##### Fedora
-Instalar con *yum*
+Instalar con *dnf*
 ```sh
-$ sudo yum install texlive-scheme-full
+$ sudo dnf install texlive-scheme-full
 ```
 ##### Arch Linux/Manjaro
 Instalar con *pacman*
@@ -53,10 +53,11 @@ Este proyecto ha sido desarrollado por:
 - Mario Daniel Ruiz Noguera ([@mariodruiz](https://github.com/mariodruiz))
 - Sid ([@JSidrach](https://github.com/JSidrach))
 - Pablo Molins ([@molins](https://github.com/molins))
+- Isabel García ([@igcontreras] (https://github.com/igcontreras))
 
 Licencia
 ----
-El código fuente se ha publicado bajo la [licencia MIT](LICENSE). Los [documentos anexos de la convocatoria 2014-2015](2014-2015/) pertenecen a la [Escuela Politécnica Superior](http://www.eps.uam.es) de la [Universidad Autónoma de Madrid](http://www.uam.es). Los logos proporcionados en la carpeta [graphics](graphics/) pertenecen también a sendas instituciones
+El código fuente se ha publicado bajo la [licencia MIT](LICENSE). Los [documentos anexos de la normativa](2014-2015/) pertenecen a la [Escuela Técnica Superior de Ingenieros Informáticos](https://www.fi.upm.es/) de la [Universidad Politécnica de Madrid](http://www.upm.es). Los logos proporcionados en la carpeta [graphics](graphics/) pertenecen también a sendas instituciones
 
 Contribuir
 ----
