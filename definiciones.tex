@@ -18,7 +18,8 @@
 % Extensión del paquete color
 \usepackage[table,xcdraw]{xcolor}
 % Márgenes
-\usepackage{anysize}
+% \usepackage{anysize}
+\usepackage[hmargin=3cm,vmargin=3.5cm]{geometry}
 % Cabecera y pie de página
 \usepackage{fancyhdr}
 % Estilo título capítulos
@@ -110,8 +111,9 @@
 % Estilo páginas de capítulos
 \fancypagestyle{plain}{
 \fancyhf{}
-\fancyfoot[CO]{\footnotesize\emph{\nombretrabajo}}
-\fancyfoot[RO]{\thepage}
+%\fancyfoot[CO]{\footnotesize\emph{\nombretrabajo}}
+\fancyfoot[CO]{\thepage}
+%\fancyfoot[RO]{\thepage}
 \renewcommand{\footrulewidth}{.6pt}
 \renewcommand{\headrulewidth}{0.0pt}
 }
@@ -120,14 +122,14 @@
 \pagestyle{fancy}
 
 % Estilo páginas impares
-\fancyfoot[CO]{\footnotesize\emph{\nombretrabajo}}
-\fancyfoot[RO]{\thepage}
+%\fancyfoot[CO]{\footnotesize\emph{\nombretrabajo}}
+\fancyfoot[CO]{\thepage}
 \rhead[]{\leftmark}
 
 % Estilo páginas pares
-\fancyfoot[CE]{\emph{\pieparcen}}
-\fancyfoot[LE]{\thepage}
-\fancyfoot[RE]{\pieparizq}
+%\fancyfoot[CE]{\emph{\pieparcen}}
+\fancyfoot[CE]{\thepage}
+%\fancyfoot[RE]{\pieparizq}
 \lhead[\leftmark]{}
 
 % Guía del pie de página

@@ -40,7 +40,9 @@
 %
 \pagenumbering{gobble}
 \include{portada}
-\hypersetup{pageanchor=true}
+% \hypersetup{pageanchor=true}
+
+\pagenumbering{roman}
 
 % Estilo de párrafo de los capítulos
 \setlength{\parskip}{0.75em}
@@ -52,8 +54,8 @@
 % Agradecimientos
 %
 
-\include{src/dedicatoria}  
-\include{src/agradecimientos}  
+\include{src/dedicatoria}
+\include{src/agradecimientos}
 
 %
 % Resumen
@@ -116,7 +118,12 @@
 %
 % Conclusiones
 %
-\include{src/conclusiones} 
+\include{src/conclusiones}
+
+%
+% Conclusiones
+%
+\include{src/lineasfuturas}
 
 %
 % Página en blanco
