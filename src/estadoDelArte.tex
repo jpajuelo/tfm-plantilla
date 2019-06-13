@@ -81,8 +81,6 @@ La plataforma tecnológica goza de una serie de atributos, al objeto de brindar 
   \item Flexibilidad e integrabilidad, características que toman cuerpo en la existencia de un sistema de integración radiotelefónica, capaz de integrar redes de radio de distinta tecnología que conviven en la Comunidad de Madrid y facilitando la interoperabilidad de todos los efectivos de emergencia que actúan en nuestra Comunidad.
 \end{itemize}
 
-\clearpage
-
 \section{Servicios de emergencias de nueva generación}
 
 En 20 países es posible acceder los servicios de emergencia a través de SMS al 112, incluido en España. También se puede en Bélgica, Croacia, Estonia, Finlandia, Francia, Irlanda, Letonia, Lituania, Luxemburgo, Rumanía, Eslovenia, Suecia y Reino Unido. También se puede, pero sólo a través de un número más largo, en Austria, Chipre, Dinamarca, Italia, Malta y Portugal.
@@ -176,8 +174,6 @@ La arquitectura PEMEA lleva a cabo los siguientes pasos a la hora de atender una
   \item Finalmente, el PSAP obtiene la información enviada y el usuario recibe la ayuda necesaria.
 \end{enumerate}
 
-\clearpage
-
 \section{Apps de emergencias}
 
 En un principio, la razón de añadir las apps de emergencias fue el uso de las capacidades de localización de alta precisión que incluyen los teléfonos móviles de hoy en día, para que dicha información pudiese ser enviada a los PSAPs.
@@ -203,8 +199,6 @@ Estos avisos, para evitar la saturación, sólo se reciben si la persona se encu
 Pulsando sobre un aviso, se accede a la vista del mapa donde se puede observar geográficamente el área afectada por el aviso, nuestra posición con respecto al mismo y el texto del aviso lanzado desde el Centro 112.
 
 En caso de no disponer de datos la aplicación enviará nuestra posición al 112 mediante un mensaje de texto SMS.
-
-\clearpage
 
 \section{Apps de mensajería instantánea}
 
@@ -233,8 +227,6 @@ Este es el cliente de mensajería instantánea de Facebook, que hoy en día se o
 El gran revulsivo en el ámbito de la mensajería instantánea, que ha llevado esta solución a ganar popularidad en los smartphones. Es una aplicación que ganó popularidad rápidamente y que fue adquirida por Facebook en 2014. Funciona en iOS, Android, BlackBerry, Windows Phone, Nokia, Symbian y Tizen. El nombre de usuario se define a través del número de teléfono, y ofrece soluciones para poder trabajar con él desde un PC.
 
 WhatsApp es para muchos la app de mensajería instantánea más importante del mundo. WhatsApp se lanzó en 2009 y hasta la fecha continúa dando sorpresas tras cada actualización. Mensajes instantáneos, llamadas de voz, videollamadas, notas de voz, compartir archivos y chats grupales son las características que hacen a WhatsApp la app líder en el mundo.
-
-\clearpage
 
 \section{Tecnologías de comunicación en tiempo real}
 
@@ -279,8 +271,6 @@ TODO
 \subsection{WebRTC}
 
 TODO
-
-\clearpage
 
 \section{Estrategias de comunicación en tiempo real}
 
@@ -365,9 +355,13 @@ Por último, cuando una de las partes decide que ya no hay nada más que transmi
 
 \subsection{SEE}
 
-TODO
+A diferencia de los WebSockets, los Server-Sent Events (SSE) son un canal de comunicación unidireccional donde los eventos fluyen del servidor a cliente únicamente. Los eventos enviados por el servidor permiten que los clientes del navegador reciban un stream de eventos a través de una conexión HTTP sin polling \cite{sse2}.
 
-\clearpage
+Un cliente se suscribe a un "stream" de un servidor y el servidor enviará mensajes, event-stream, al cliente hasta que el servidor o el cliente cierre el stream. Depende del servidor decidir cuándo y qué enviar al cliente, por ejemplo, tan pronto como cambian los datos.
+
+SSE es un estándar que describe cómo los servidores inicializan la transmisión de datos con el cliente una vez una conexión de cliente inicial se establece. Esta tecnología fue propuesta por el WHATWG (Web Hypertext Application Technology Working Group) y se implementó por primera vez en el navegador web Opera en el año 2006 \cite{sse1}.
+
+También ofrece una API de JavaScript denominada EventSource implementada en la mayoría de los navegadores modernos como parte del estándar HTML5 de W3C. Hay polyfills disponibles para los navegadores que no son compatibles con la API de EventSource \cite{sse3}.
 
 \section{Protocolos de mensajería instantánea}
 
@@ -406,8 +400,6 @@ XMPP (eXtensible Messaging and Presence Protocol) es un protocolo abierto y exte
 Posee muchas implementaciones abiertas de servidores, clientes y librerías para las más diversas plataformas y lenguajes. Su funcionamiento topológico se basa en la clásica arquitectura cliente / servidor en la que no existen servidores centrales que gestionan el servicio sino que cualquier usuario puede crear su propio servidor XMPP.
 
 Este protocolo es utilizado en aplicaciones y servicios conocidos como Google Talk, Tuenti, Facebook y WhatsApp (con algunas variaciones del mismo adaptadas al funcionamiento propio del servicio).
-
-\clearpage
 
 \section{Aplicaciones web}
 
@@ -529,7 +521,7 @@ Es un formato para intercambio de datos, un estándar abierto que utiliza texto 
 
 JSON es ampliamente usado para intercambio de información entre servicios web y REST APIs. Es usado especialmente en entornos donde el tamaño del flujo de datos es de vital importancia. Su simplicidad y facilidad de implementación le otorgan un gran desempeño y lo convierten en una de las alternativas ideales al momento de reemplazar XML.
 
-\subsubsection{YML}
+\subsubsection{YAML}
 
 Su nombre proviene del inglés YAML Ain’t Another Markup Language. Es otro formato para el intercambio de información que tiene como objetivo facilitar el mapeo de estructuras de datos más complejas (como las listas) en un documento de texto plano legible por un ser humano. Si bien es un formato joven, sus características le han hecho ganarse un lugar importante en la web, junto con XML y JSON.
 
