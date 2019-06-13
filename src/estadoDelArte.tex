@@ -2,67 +2,239 @@
 
 Este capítulo vamos a comprender mejor cómo es el ámbito de los servicios de emergencias, sobre todo el estado actual de las aplicaciones de emergencias para móviles donde se enmarca el proyecto. Además, de las diferentes etapas o componentes que afectan en la integración de uno nuevo servicio a estas aplicaciones de emergencias.
 
+\clearpage
+
 \section{Servicios de emergencias}
+
+Desde 1998, los países de la Unión Europea tienen la obligación de garantizar que los usuarios de teléfonos fijos y móviles puedan llamar sin coste alguno al número de emergencia 112 para comunicar una incidencia de cualquier tipo.
+
+Si la llamada se hace a través de un teléfono fijo, el centro de atención de emergencias conocerá desde dónde se ha realizado la llamada. Pero si se llama desde un teléfono móvil, sólo se podrá saber la zona desde donde más o menos se hace la llamada, en ningún caso el punto exacto en el que se encuentra quien requiere la ayuda.
 
 \subsection{Número de emergencia europeo}
 
-TODO: Estado del arte
+El gran aumento de los viajeros dentro de la Unión Europea hizo que el Consejo de la Unión Europea decidiera introducir un número de emergencia común en todos los estados para evitar la necesidad de recordar diferentes números nacionales dependiendo de la ubicación.
+
+Este número de emergencia europeo fue el 112 y, desde entonces, se encuentra disponible de forma gratuita, 24 horas al día, los 365 días al año, en cualquier lugar de la Unión Europea. Un ciudadano puede marcar el 112 para comunicarse con los servicios de emergencia, incluida también la policía, los servicios de asistencia médica y el cuerpo de bomberos.
+
+La llamada de emergencia a un centro 112 puede realizarse aunque no se disponga de cobertura del operador de red que estemos usando, pero sí de algún otro, pues se utiliza la red GSM (Global System for Mobile communications) que haya disponible. El teléfono móvil realiza la llamada de voz igualmente si se desconoce el PIN e incluso si el teléfono no tiene introducida la tarjeta SIM en el terminal o la pantalla está bloqueada.
 
 \subsection{EENA}
 
-TODO
+La Asociación del Número de Emergencia Europeo o EENA (acrónimo en inglés de European Emergency Number Association) cree que tener un número de emergencia común en todas partes de Europa está beneficiando directamente a los ciudadanos y visitantes pero desafortunadamente, este número que puede salvar vidas es en gran parte desconocido.
+
+EENA es una organización sin ánimo de lucro con base en Bruselas y establecida en 1999 con el objetivo de promover servicios de emergencia de calidad a través del número de emergencia 112 en toda Europa. Esta organización proporciona una plataforma de intercambio de información y experiencias entre los servicios de emergencia, autoridades públicas, investigadores y la industria de la tecnología con el objetivo de mejorar la respuesta a las situaciones de emergencia de acuerdo a los requisitos de los usuarios.
+
+EENA, basándose en diferentes fuentes, ha diseñado los modelos 112. Los modelos 112 no cubren todo el modelo de manejo de llamadas, sino que intentan resaltar sus características principales. Los modelos 112 no presentan todos los modelos sobre la organización de los PSAPs (Public Safety Answering Point) en Europa, pero presentan los conceptos principales con descripciones simplificadas.
+
+\subsubsection{Modelo donde las EROs atienden las llamadas}
+
+En este modelo las llamadas a números nacionales y al 112 son redirigidas a las  Organizaciones de Respuesta de Emergencia (ERO, acrónimo en inglés de Emergency Response Organisation). Si se requiere la intervención de una ERO diferente, la llamada y/o los datos sobre la situación de emergencia se envían a la ERO más adecuada. En una variante, dos EROS son colocadas y contactadas a través del mismo número.
+
+\subsubsection{Modelo de filtrado de llamadas y envío de recursos}
+
+En este modelo las llamadas a números nacionales y al 112 son redirigidas a las  Organizaciones de Respuesta de Emergencia (ERO, acrónimo en inglés de Emergency Response Organisation). Si se requiere la intervención de una ERO diferente, la llamada y/o los datos sobre la situación de emergencia se envían a la ERO más adecuada. En una variante, dos EROS son colocadas y contactadas a través del mismo número.
+
+\subsubsection{Modelo de recogida de datos y envío de recursos}
+
+La diferencia respecto al modelo 2 es el papel que juegan las organizaciones independientes. Los operadores clasifican la llamada y hacen un envio paralelo de las llamadas a las EROs. En algunos casos, los especialistas de las EROs están disponibles para dar soporte a los operadores. Las EROs se encargan del envío de los recursos de intervención.
+
+\subsubsection{Modelo de recogida de datos y envío de recursos en la misma sala de control}
+
+Este modelo también se realiza en dos niveles. Los operadores y las EROs se encuentran en el mismo lugar. Los operadores están a cargo de clasificar la llamada y, en el caso que sea necesario, hacer un envio paralelo de las llamadas a las EROs más apropiadas. En algunos casos, los especialistas de las EROs están disponibles para dar soporte a los operadores. Las EROs se encargan del envío los recursos de intervención.
+
+\subsubsection{Modelo donde las EROs y el PSAP son independientes}
+
+En este modelo, los operadores se hacen cargo tanto de la atención de las llamadas como del envío de los recursos de intervención. En algunos casos, los especialistas de las EROs están disponibles para dar soporte a los operadores. El mismo PSAP se encarga de la clasificación de las llamadas, la recogida de datos y el envío de los recursos de intervención a la incidencia.
+
+\subsubsection{Modelo donde las PSAPs están interconectados}
+
+Los PSAP de diferentes regiones se pueden interconectar. Si no hay disponible un operador, la llamada puede ser redirigida a otro PSAP.
 
 \subsection{Centro 112 de Madrid}
 
-TODO
+El teléfono 112 se activó en la Comunidad de Madrid el 1 de enero de 1998 para atender, tratar y evaluar todas las llamadas de emergencia de los madrileños. Ese año recibió alrededor de un millón de llamadas. A día de hoy, la cifra supera los 86,6 millones, lo que lo consagra como una gran central de gestión de emergencias que ofrece confianza y seguridad a los ciudadanos.
 
-\subsubsection{Modelos 112}
+El Centro 112 de Madrid está diseñado bajo un criterio multiservicio que permite integrar operativamente a todos los organismos de emergencia, mediante los acuerdos precisos para definir los procedimientos que determinan cuándo hay que activar cada servicio. Todo ello, con independencia de que se encuentren integrados físicamente en el Centro 112, como sucede con los principales, o que sus sedes estén ubicadas fuera del Centro.
 
-TODO: Alcance del trabajo/proyecto
+El Centro 112 de la Comunidad de Madrid, ha incorporado en su Sistema Integrado de Gestión de Emergencias (SIGE112) una novedosa aplicación móvil permitiendo la localización del llamante mediante las coordenadas desde donde se está realizando la llamada.
+
+El trabajo de los profesionales, junto con el desarrollo tecnológico, sirve para optimizar la asistencia y para que la gestión del 112 de la Comunidad de Madrid haya obtenido la norma ISO 22320, siendo el único de España en tener este certificado de calidad.
+
+\subsubsection{Modelo 112}
+
+Los procedimientos determinan también los intercambios de información necesarios para conocer en todo momento el desarrollo de la gestión de la incidencia. Este tipo de modelo, determina que el trabajo se desarrolle a dos niveles:
+
+\begin{enumerate}
+  \item Recepción, atención y gestión de la llamada. Este proceso corresponde a Madrid 112 y tiene por finalidad, partiendo de la información de cada llamada, activar los servicios precisos que tienen que resolver la emergencia.
+  \item Movilización y gestión de recursos. Corresponde a los organismos de intervención directa en la emergencia la activación de los recursos adecuados para la resolución de la emergencia. La actividad operativa que corresponde a Madrid 112 se desarrolla fundamentalmente en la sala de operaciones.
+\end{enumerate}
+
+El modelo de Madrid 112 está diseñado con criterios de escalabilidad que nos permiten ir incorporando los avances de las nuevas tecnologías.
+
+\subsubsection{Plataforma tecnológica}
+
+La plataforma tecnológica goza de una serie de atributos, al objeto de brindar un soporte eficaz a la gestión de las emergencias, tales como:
+
+\begin{itemize}
+  \item Capacidad, para atender la potencial demanda de emergencias de los más de 6 millones de ciudadanos existentes en el ámbito territorial de la Comunidad de Madrid. Número al que se deben añadir las personas en tránsito y turistas. El Centro 112 goza de un excedente de capacidad, espacial, operativa y tecnológica para poder hacer frente a casos extremos de catástrofe o gran emergencia, a sabiendas de que lo que funciona bien en el régimen ordinario, lo hará también en el extraordinario.
+  \item Seguridad, entendida como el aseguramiento de la prestación continuada del Servicio 24 h/día, 365 días/año. Este aseguramiento se sustenta en que el suministro de energía está garantizado mediante doble acometida exterior y la existencia de grupos electrógenos con capacidad de soportar y redundar las necesidades energéticas del Centro. El aseguramiento de las comunicaciones y la información se soporta en la redundancia de elementos críticos de los sistemas, y en la existencia de un centro de respaldo del principal.
+  \item Flexibilidad e integrabilidad, características que toman cuerpo en la existencia de un sistema de integración radiotelefónica, capaz de integrar redes de radio de distinta tecnología que conviven en la Comunidad de Madrid y facilitando la interoperabilidad de todos los efectivos de emergencia que actúan en nuestra Comunidad.
+\end{itemize}
+
+\clearpage
 
 \section{Servicios de emergencias de nueva generación}
 
-TODO
+En 20 países es posible acceder los servicios de emergencia a través de SMS al 112, incluido en España. También se puede en Bélgica, Croacia, Estonia, Finlandia, Francia, Irlanda, Letonia, Lituania, Luxemburgo, Rumanía, Eslovenia, Suecia y Reino Unido. También se puede, pero sólo a través de un número más largo, en Austria, Chipre, Dinamarca, Italia, Malta y Portugal.
+
+A día de hoy, los ciudadanos tienen la necesidad de comunicarse con los servicios de emergencias a través de los medios que utilizan diariamente, y la organización del 112 y los servicios de emergencias están muy dispersos en toda la Unión Europa y aun más en el mundo entero.
+
+Los distintos PSAPs deben afrontarse a ciertos cambios, que tienen un impacto directo en sus organizaciones, para resolver las dificultades en recopilar información relevante relacionada con la emergencia, determinar la ubicación precisa de la persona que llama y proveer acceso universal e inclusivo.
+
+Para que el 112 siga funcionando en toda la Unión Europa de manera equivalente a la actual se necesita un mínimo de estandarización.
 
 \subsection{AML}
 
-TODO: Alcance del trabajo/proyecto
+En vista de que muchos teléfonos móviles han tenido información de ubicación muy precisa durante varios años, el operador de PSAP de Etapa 1 del Reino Unido, British Telecom, junto con sus socios, establecieron un proyecto, conocido como AML (son las siglas de Advanced Mobile Location).
+
+AML permite que la tecnología de teléfonos inteligentes pase datos de ubicación basados en GNSS o WiFi a servicios de emergencias a través de SMS o HTTPS. En la gran mayoría de los casos, AML proporciona ubicaciones exteriores e interiores con una precisión de menos de 50m y 25m de radio respectivamente.
+
+Hace mucho tiempo que Android integró AML en todos sus dispositivos. En cambio, Apple integró AML en la actualización de iOS 11.3 en marzo de 2018 y funciona en un perímetro de menos de 100 metros en el 63% de los casos.
+
+Como una consideración de desarrollo importante, AML se diseñó de modo que no interfiera con la llamada de emergencia por voz, por lo que si esta solución se replica en otros países de la Unión Europea, los desarrolladores deben confirmar que tanto el teléfono como la red móvil pueden admitir el establecimiento de ubicación GNSS o Wifi y la transmisión de SMS al PSAP a través de la red GSM durante una llamada de voz de emergencia estándar.
+
+\subsubsection{Funcionamiento de AML}
+
+Un teléfono móvil de hoy en día habilitado con AML reconoce cuando se realiza una llamada de emergencia y, si en este instante no está activado, activa el GNSS del dispositivo para recopilar la información de ubicación del usuario que llama. El teléfono luego envía un SMS (Short Message Service) automático a los servicios de emergencia (o PSAPs) con la ubicación actual de donde se encuentra el ciudadano, antes de volver a desactivar el GNSS.
+
+SMS ofrece la mejor cobertura geográfica, especialmente en áreas remotas, y además, los SMS de emergencia generalmente no se cobran. El servicio también puede usar Wi-Fi, dependiendo de cuál sea mejor en ese momento dado.
+
+\subsubsection{Beneficios de AML}
+
+Según EENA, AML es 4.000 veces más preciso que la localización GSM tradicional, con un total del 85\% de las llamadas localizadas dentro de un radio de menos de 50 metros, mientras que con la localización mediante la red móvil, el radio puede tener varios kilómetros.
+
+Las ventajas más llamativas de AML son:
+
+\begin{itemize}
+  \item Una vez implementado, el usuario no tiene que descargar ninguna app o realizar alguna acción adicional, sino que todo se hace de forma automática.
+  \item El sistema ya acumula bastantes casos de éxito.
+  \item La solución no ignora la información de Cell-ID que ya existía, sino que la complementa con información de GNSS o información de Wifi tomada del teléfono.
+  \item Las redes móviles o los proveedores de dispositivos móviles no necesitaron una inversión significativa.
+\end{itemize}
+
+Pero AML todavía tiene algunas limitaciones, la principal es que no se ha extendido de forma global. El sistema ya funcionaba desde el 2016 en Reino Unido, Lituania, Austria y en Estonia, mientras que en otros países de la Unión Europea esperan desplegarlo o en están en fase de prueba.
 
 \subsubsection{Android ELS}
 
-TODO: Alcance del trabajo/proyecto
+Android incluye AML, desde la versión Gingerbread OS en adelante, a través del Servicio de Ubicación de Emergencia (ELS, por sus siglas en inglés, Emergency Location Service). ELS fue anunciada por Google en Julio de 2016 y ha sido una de las noticias más importantes de la industria en los últimos años.
+
+Android ELS ayuda a los operadores de redes móviles, a los proveedores de infraestructura de emergencia y a los gobiernos a proporcionar información de ubicación más precisa a los PSAPs durante una emergencia. Cuando los servicios de emergencia reciben una llamada, deben conocer la ubicación de la persona que llama para enviar ayuda y salvar vidas.
+
+Android ELS es compatible con más del 99\% de los dispositivos Android existentes (versión 4.0 y posteriores) a través de Google Play Services. Este servicio está disponible hoy en día y continúan interactuando activamente con los países y socios para hacer que ELS esté más disponible.
 
 \subsection{NG112}
 
-TODO: Alcance del trabajo/proyecto
+Actualmente, los servicios de emergencia solo son accesibles mediante llamadas telefónicas de voz, por lo que, tienen que cambiar su tecnología para ser parte del futuro; es decir, tener más en cuenta las comunicaciones basadas en Internet.
+
+NG112 (Next Generation 112), un proyecto de EENA, busca la integración de las nuevas tecnologías en los servicios de emergencias, para recibir no solo voz, sino también información de ubicación, texto en tiempo real, ficheros multimedia, videollamadas y otra información relevante.
+
+Una de las razones, por las que desarrolló NG112, fue que los ciudadanos usan comunicaciones basadas en IP todos los días y quieren comunicarse con los servicios de emergencia utilizando estos métodos.
+
+\subsubsection{Beneficios de NG112}
+
+En contraposición a las limitaciones del modelo actual de 112, NG112 ofrece algunas ventajas:
+
+\begin{itemize}
+  \item Una infraestructura basada en el protocolo IP que implementa estándares abiertos y asegura interoperabilidad entre fronteras, agencias y proveedores.
+  \item Métodos sólidos de adquisición y representación de información de localización con independencia del tipo de red.
+  \item Permite al ciudadano acceder a los servicios de emergencia desde cualquier parte, y desde cualquier dispositivo, usando distintos tipos de medios (texto, voz o video) y aplicaciones.
+  \item Nuevas funciones de mapeado y enrutamiento de llamadas que reemplazan los tradicionales códigos de área.
+\end{itemize}
 
 \subsection{PEMEA}
 
-TODO: Alcance del trabajo/proyecto
+EENA empezó en 2016 a desarrollar un proyecto que busca que las apps que conectan a los ciudadanos con los servicios de emergencia deben funcionar por completo en cualquier lugar de la Unión Europea. Para lograr esto, las apps deben estar interconectadas de manera estandarizada. No se trata de crear una aplicación única, sino que múltiples aplicaciones móviles sean capaces de funcionar allá de donde estén.
+
+EENA, junto con la empresa francesa Deveryware y la empresa italiana Beta 80, presentó a finales del mes de abril de 2018, el proyecto PEMEA (Pan-European Mobile Emergency App). PEMEA es un estándar ETSI, desarrollado bajo el proyecto H2020 NEXES, que busca la interconexión de apps de emergencias.
+
+El objetivo de PEMEA es que una persona que llama por una emergencia pueda usar cualquier app de emergencias en cualquier lugar de Europa. Permitiendo a cualquier PSAP recibir información vital de la persona que llama, como idiomas o discapacidades, y una ubicación precisa para una respuesta de emergencia más rápida y efectiva.
+
+Además, PEMEA define roles y responsabilidades así como formatos de intercambio de datos y un modelo general de seguridad de manera que los PSAPs puedan asegurarse de la veracidad de la información que les está siendo facilitada a través de la app, y a su vez los usuarios de la app pueden estar seguros de que la información que facilitan no está siendo usada indebidamente.
+
+PEMEA se lanzó oficialmente el 11 de septiembre de 2018 en Madrid (España). De hecho, el beneficio para España es doble, ya que los usuarios no se verán obligados, como hasta ahora, a descargar diferentes apps de emergencias cuando viajan de una Comunidad Autónoma a otra dentro del propio país.
+
+\subsubsection{Cómo funciona PEMEA}
+
+La arquitectura PEMEA lleva a cabo los siguientes pasos a la hora de atender una llamada al 112:
+
+\begin{enumerate}
+  \item El usuario de la app de emergencias llama al 112.
+  \item El AP (Application Provider) autentica al usuario, formatea los datos de la llamada antes de enviarlos al PSP (PSAP Service Provider).
+  \item El PSP recupera información vital del usuario a partir de fuentes de confianza y los proporciona al PSAP.
+  \item Si el usuario está en itinerancia, los datos se envían al ASP (Aggregating Service Provider) para fines de enrutamiento.
+  \item El ASP proporciona enrutamiento de los datos para el PSP o PSAP más adecuado, o envía un error.
+  \item Finalmente, el PSAP obtiene la información enviada y el usuario recibe la ayuda necesaria.
+\end{enumerate}
+
+\clearpage
 
 \section{Apps de emergencias}
 
-TODO
+En un principio, la razón de añadir las apps de emergencias fue el uso de las capacidades de localización de alta precisión que incluyen los teléfonos móviles de hoy en día, para que dicha información pudiese ser enviada a los PSAPs.
+
+Una app de emergencias puede ser muy útil si ocurre una emergencia y hace falta pedir ayuda. Algunas ya existentes permiten enviar de forma automática la localización a las unidades de atención de llamadas e incluso mandar fotografías para agilizar una primera intervención si es necesario. Pero los sistemas de comunicación con los centros de gestión de las llamadas al 112 no han evolucionado con la misma rapidez que la tecnología en tiempo real.
+
+Aunque actualmente existen cientos de apps de emergencias, éstas no están integradas entre sí. Un viajero está obligado a descargarse la app que usan en la ciudad de destino, porque el centro de emergencias de esta ciudad no está habilitado para recibir esa solicitud.
 
 \subsection{My112}
 
-TODO: Alcance del trabajo/proyecto
+My112 es una app con la que podemos comunicarnos con el servicio de emergencias de ciertas comunidades autónomas de España. La app está disponible tanto en Android como en iOS y, por supuesto, de forma gratuita y sin anuncios. Es sencillo de usar: antes de llamar al 112 para cualquier emergencia, usamos la app para enviar nuestra ubicación actual, incluso si queremos, como información adicional, enviar también fotografías de lo que sucede. De este modo, enviamos mayor información de la emergencia a los PSAPs.
 
-\section{Aplicaciones de mensajería instantánea}
+My112 no está disponible en toda Europa, ni siquiera en toda España. Sólo funciona si la utilizamos en determinadas comunidades autónomas. Actualmente, My112 es compatible con los centros 112 de Madrid, Castilla y León, Islas Baleares, Cataluña, Cantabria y Melilla.
 
-TODO
+En realidad, la app no está desarrollada ni por el organismo que regula el 112 ni por ninguna entidad oficial, sino por Telefónica. Telefónica ha trabajado en coordinación con los centros de Emergencias 112 de las distintas comunidades.
+
+\subsubsection{Avisos de emergencias en tiempo real}
+
+My112 recibe avisos de emergencias en tiempo real cercanas a tu posición e información actualizada de las mismas en el momento de producirse. Cuando se produzca un aviso de emergencia en la zona donde te encuentres, recibirás una notificación con información asociada.
+
+Estos avisos, para evitar la saturación, sólo se reciben si la persona se encuentra en la “zona cercana”. Los servicios de emergencia seleccionan un área en un mapa desde el panel de administración y todos los que estén dentro recibirán las alertas enviadas a ese grupo.
+
+Pulsando sobre un aviso, se accede a la vista del mapa donde se puede observar geográficamente el área afectada por el aviso, nuestra posición con respecto al mismo y el texto del aviso lanzado desde el Centro 112.
+
+En caso de no disponer de datos la aplicación enviará nuestra posición al 112 mediante un mensaje de texto SMS.
+
+\clearpage
+
+\section{Apps de mensajería instantánea}
+
+Las apps de mensajería instantánea son el motivo de que muchos usuarios deciden dar el salto a los smartphones, ya que la posibilidad de enviar mensajes sin coste adicional resulta muy atractivo. Casi todo el mundo usa las apps de mensajería instantánea como principal medio de comunicación.
+
+Hoy por hoy, WhatsApp es el rey indiscutible, sobre todo en España donde tiene una cuota de mercado realmente alta, dejando muy poco espacio para otros competidores. Pero a pesar de todo, si por cualquier motivo no os gusta WhatsApp existen muchas alternativas de calidad para utilizar la mensajería instantánea.
+
+Todas parten sobre la misma base, chat de texto, voz e incluso videollamada, y luego tienen sus particularidades, interfaces de usuario muy distintas, una base de usuarios mayor o menor, y diferentes herramientas enfocadas a la seguridad o la privacidad.
 
 \subsection{Skype}
 
-TODO: Alcance del trabajo/proyecto
+Skype es el cliente de mensajería instantánea de Microsoft, que además se puede usar para comunicarse a través de voz y vídeo. Al ser multiplataforma, está disponible en Windows, Mac y Linux, así como en aplicaciones para tablets y smartphones.
 
-\subsection{WhatsApp}
+Skype fundamentalmente lo asociamos con las videoconferencias, donde podemos comunicarnos simultáneamente con hasta 10 usuarios.  La posibilidad de llamadas de voz a través de Skype, incluso a teléfonos convencionales si tenemos créditos o estamos en un plan de pago hacen que sea una opción muy atractiva para tener instalada en el teléfono móvil.
 
-TODO: Alcance del trabajo/proyecto
+Su apuesta por Skype Qik para compartir mensajes de vídeo entre amigos, es una opción interesante con la que trata de ganar terreno entre los usuarios.
 
 \subsection{Facebook Messenger}
 
-TODO: Alcance del trabajo/proyecto
+Facebook Chat, lanzada en 2008 por Facebook, fue la punta de lanza que renovó al mundo de la mensajería instantánea. En 2011 dio el salto definitivo en las apps con el lanzamiento de Facebook Messenger. Ahora no solo permite compartir archivos, sino también mensajes de voz, llamadas y videollamadas entre otras características como las reacciones ante las imágenes que recibimos de otros usuarios.
+
+Este es el cliente de mensajería instantánea de Facebook, que hoy en día se ofrece únicamente en dispositivos móviles (Android, iPhone, Windows Phone y BlackBerry) o mediante la página oficial de Facebook. Hace tiempo que se volvió independiente, y es uno de los más importantes en todo el mundo.
+
+\subsection{WhatsApp}
+
+El gran revulsivo en el ámbito de la mensajería instantánea, que ha llevado esta solución a ganar popularidad en los smartphones. Es una aplicación que ganó popularidad rápidamente y que fue adquirida por Facebook en 2014. Funciona en iOS, Android, BlackBerry, Windows Phone, Nokia, Symbian y Tizen. El nombre de usuario se define a través del número de teléfono, y ofrece soluciones para poder trabajar con él desde un PC.
+
+WhatsApp es para muchos la app de mensajería instantánea más importante del mundo. WhatsApp se lanzó en 2009 y hasta la fecha continúa dando sorpresas tras cada actualización. Mensajes instantáneos, llamadas de voz, videollamadas, notas de voz, compartir archivos y chats grupales son las características que hacen a WhatsApp la app líder en el mundo.
+
+\clearpage
 
 \section{Tecnologías de comunicación en tiempo real}
 
@@ -70,112 +242,297 @@ TODO
 
 \subsection{IM}
 
-TODO: Alcance del trabajo/proyecto
+La mensajería instantánea se remonta a la década de los 60, cuando el MIT desarrolló una plataforma que permitía que hasta 30 usuarios pudieran iniciar sesión a la vez y enviarse mensajes entre ellos. El concepto creció en popularidad a medida que la tecnología avanzaba, y ahora damos por sentado la mensajería instantánea y la consideramos parte de nuestra vida cotidiana.
+
+La mensajería instantánea o IM (Instant Messaging) es un servicio de comunicación en tiempo real que permite una conversación, casi siempre con alguien ya conocido, durante la cual un dispositivo móvil o sobremesa está conectado a otro con el fin de intercambiar texto. Utiliza el protocolo IP, siendo un servicio más que se proporciona a través de Internet.
+
+La mensajería instantánea ha evolucionado desde el concepto de las salas de chat en línea públicas de los años 90 y 2000, y se ha vuelto bastante sofisticada y muy común. Algunas compañías usan este servicio como parte de sus herramientas de productividad y comunicación.
+
+Con el auge de las redes sociales y servicios como Facebook y Twitter, así como el cambio a dispositivos móviles como teléfonos inteligentes y tablets, la mensajería instantánea ha perdurado y evolucionado.
+
+La mensajería instantánea crece "de forma imparable" como primera forma de comunicación, imponiéndose incluso a la comunicación en persona. El uso de la mensajería instantánea es especialmente significativo entre los jóvenes.
+
+Algunos productos de mensajería instantánea son básicos, que funcionan esencialmente como mensajes de texto. Otros sistemas de mensajería instantánea ofrecen opciones avanzadas que le permiten hacer más que enviar mensajes de texto, como la posibilidad de compartir fotos, enviar y recibir archivos.
+
+\subsubsection{Cómo funciona la mensajería instantánea}
+
+La mensajería instantánea se basa en pequeños programas, conocidos como clientes, que dos personas independientes instalan, y esos programas se conectan para transmitir mensajes escritos entre sí.
+
+Para que dos personas se puedan comunicar usando IM, cada uno debe tener instalado uno de estos programas, que se conectan entre sí para enviar mutuamente mensajes de texto u otro contenido multimedia.
+
+La forma en que la comunicación ocurre se puede describir de la siguiente manera:
+
+\begin{enumerate}
+  \item Usando un cliente de IM, tecleas tu usuario y contraseña.
+  \item El cliente se conecta a un servidor usando Internet y algún protocolo de comunicación, que es usualmente específico para el servicio que estés usando.
+  \item El servidor verifica tu identidad y crea un registro temporal de tu conexión y los contactos que tienes en tu lista.
+  \item El servidor verifica quiénes de tu lista de contactos está en línea y le da esa información al cliente, que a su vez hará lo necesario para mostrarlos. Asimismo, les indicará a los clientes de esos contactos que tú estás en línea.
+  \item Seleccionas una persona a la que le enviaras un mensaje. Tecleas tu mensaje y lo envías. En este momento tu software cliente sabe a qué IP y puerto enviar el mensaje y el cliente de tu contacto le muestra el mensaje.
+  \item La otra persona te escribe un mensaje, repitiendo el proceso y así llevando a cabo una conversación.
+  \item Cuando cierras tu cliente, el servidor se da cuenta de que estás fuera de línea y le comunica a los clientes de tus contactos que ya no estás en línea. El servidor destruye el registro temporal que se había creado cuando te conectaste.
+\end{enumerate}
 
 \subsection{SIP}
 
-TODO: Alcance del trabajo/proyecto
+TODO
 
 \subsection{WebRTC}
 
-TODO: Alcance del trabajo/proyecto
+TODO
+
+\clearpage
 
 \section{Estrategias de comunicación en tiempo real}
 
-TODO
+Para muchos, lo primero que se nos viene a la mente cuando hablamos de aplicaciones web en tiempo real, es el uso de WebSocket, sin embargo, como verás a continuación, la respuesta a la implementación de comunicación en tiempo real, no siempre deben ser usando WebSocket.
+
+A continuación vienen algunas de las estrategias que los desarrolladores web han implementado para poder establecer una comunicación constante con el servidor, que les permita mantener la información actualizada, justo cuando sucede.
 
 \subsection{Polling}
 
-TODO: Alcance del trabajo/proyecto
+La más simple de todas las formas es el pooling. Es muy simple, para saber si algo pasa, tenemos que preguntar constantemente. La estrategia del pooling consiste en consultar al servidor en un periodo constante de tiempo, usualmente muy pequeño, digamos cada 3 segundos. En términos más técnicos, implementar pooling significa realizar peticiones al servidor cada par de segundos, para consultar información nueva.
+
+Las ventajas del pooling son:
+
+\begin{itemize}
+  \item Es extremadamente simple realizar peticiones constantes cada cierto periodo de tiempo.
+  \item No requiere de tecnologías especiales más que AJAX, para poder hacer las consultas.
+  \item Muy fácil de implementar, sólo colocas tus consultas en un intervalo y listo.
+\end{itemize}
+
+Así como la implementación es muy simple, las desventajas de usar pooling son también muy claras:
+
+\begin{itemize}
+  \item Sobrecargas al servidor, es muy probable que muchas de las peticiones reciban como respuesta nada, en caso de que no haya información nueva que comunicar, sin embargo, las peticiones siguen ejecutándose y el servidor tiene que responderlas.
+  \item Pequeña latencia. Si tu aplicación es de respuesta crítica, considera que con el pooling siempre habrá un ligero retraso entre el momento en el que la información se produce y el momento en el cliente se entera, si por ejemplo, mandas una petición cada 10 segundos, este será el tiempo máximo en que la información podría llegar retrasada.
+\end{itemize}
 
 \subsection{Long polling}
 
-TODO: Alcance del trabajo/proyecto
+Al notar que muchas de las respuestas que se reciben las peticiones de una implementación con pooling, son respuestas vacías porque el servidor no tiene nada nuevo que comunicar, se introdujo una mejora a dicha estrategia, la llamaron long pooling.
+
+El flujo de una implementación con long pooling es la siguiente:
+
+\begin{enumerate}
+  \item El cliente envía una petición HTTP al servidor consultando información nueva.
+  \item El servidor tiene dos opciones:
+  \begin{enumerate}
+    \item Si existe información nueva que reportar, la envía inmediatamente.
+    \item Si no existe información nueva que reportar, mantiene esta conexión HTTP en espera y abierta, hasta que exista algo que reportar, entonces envía la información al cliente y cierra dicha conexión.
+  \end{enumerate}
+  \item El cliente recibe respuesta de su mensaje con datos nuevos, ya sea tan pronto como la envió o luego de haber esperado por bastante tiempo a que hubiera algo nuevo que reportar.
+  \item El cliente manda una nueva petición hasta que la anterior fue contestada, así, esta nueva recibirá respuesta hasta que haya nuevos datos.
+\end{enumerate}
+
+La clara diferencia entre el long pooling y el pooling es que en esta mejora de la estrategia anterior, no se envía peticiones constantes, más bien se envía una inicial y las siguientes sólo se envían hasta que hubo una respuesta previa, con datos actualizados. Esto reduce drásticamente la cantidad de peticiones que enviamos hacia el servidor.
+
+Las ventajas del long pooling son las siguientes:
+
+\begin{itemize}
+  \item Todas las del pooling, a final de cuentas es casi la misma metodología.
+  \item Menos peticiones que el pooling, por lo tanto, un servidor con menos carga y más eficiente.
+  \item Mejora significativa en qué tan rápido recibimos los datos nuevos, ya que para cuando estos se crean, ya hay una conexión esperando para que se envíen al cliente.
+\end{itemize}
+
+Las desventajas son más difíciles de identificar, pero sucede:
+
+\begin{itemize}
+  \item Seguimos realizando y abriendo peticiones HTTP, aún cuando estas quizás nunca reciban respuesta.
+  \item Algunos servidores no permiten que las conexiones HTTP permanezcan abiertas por mucho tiempo, por lo que cada que se cierran, debemos crear peticiones nuevas, aumentando la carga del servidor.
+\end{itemize}
 
 \subsection{WebSocket}
 
-TODO: Alcance del trabajo/proyecto
+En 2010, justo en la cúspide de la popularidad del término HTML5, se introdujo al navegador la habilidad de establecer conexión a dos vías, directamente con el servidor, el protocolo WebSocket.
+
+WebSocket es un protocolo que permite crear un canal de comunicación bidireccional (full-duplex) sobre una única conexión TCP. Está pensado para ser implementado en navegadores y servidores web, aunque no hay ningún impedimento a la hora de implementarlo en cualquier otro tipo de aplicación que siga el modelo cliente/servidor.
+
+Es el mismo concepto de los clásicos sockets de UNIX, pero en la Web, y con la idea de facilitar la transferencia de datos en tiempo real entre un cliente y un servidor web. Siendo una comunicación bidireccional, el servidor web puede enviar la información directamente al cliente durante la conexión.
+
+Las comunicaciones se realizan a través de los mismos puertos que utiliza HTTP con el fin de ofrecer compatibilidad con el software HTTP del lado del servidor ya existente. Es decir, cuando el protocolo trabaja directamente sobre TCP utiliza el puerto 80 y cuando lo hace sobre TLS utiliza el 443. No obstante, WebSocket es un protocolo independiente.
+
+\subsubsection{Funcionamiento básico}
+
+El protocolo se divide en dos partes: la negociación y la transferencia de datos. Como este coexiste con HTTP, la primera comunicación debe realizarse necesariamente a través de una petición HTTP. Por ello, la negociación de apertura comienza con una petición upgrade por parte del cliente, que tiene el siguiente aspecto:
+
+Cabe destacar que la elección del método GET es una decisión arbitraria tomada por los autores del borrador que finalmente quedó plasmada en el RFC. Aun así, es el único método que contempla el estándar y, por tanto, el único que se debe utilizar. Por su parte, si todo va bien, el servidor responde con un estado 101 (switching protocols), que tiene el aspecto que sigue:
+
+En ambos casos, tanto en la petición como en la respuesta, se incluyen una serie de cabeceras: obligatorias de HTTP/1.1 (Host), necesarias para establecer la negociación (Upgrade, Connection y Sec-WebSocket-*) o por cuestiones relacionadas con modelo de seguridad escogido para el protocolo (Origin).
+
+Una vez el cliente y el servidor han cumplido con su parte de la negociación, y únicamente si no ha ocurrido ningún error, comienza la transferencia de información. A partir de ese momento cada parte puede enviar información a placer sin depender de la otra, cosa imposible de hacer con HTTP, AJAX, las tecnologías push en general o técnicas más específicas como long polling.
+
+Por último, cuando una de las partes decide que ya no hay nada más que transmitir, es posible cerrar la conexión mediante una negociación de cierre. Esta se inicia enviando un mensaje de control específico, al cual el otro extremo responde con otro mensaje de control para confirmar que el cierre es acordado. La negociación de cierre está pensada para ir acompañada del cierre de la conexión TCP.
 
 \subsection{SEE}
 
-TODO: Alcance del trabajo/proyecto
+TODO
+
+\clearpage
 
 \section{Protocolos de mensajería instantánea}
 
-TODO
+En la actualidad existe una gran variedad de protocolos que son usados en la mensajería instantánea, algunos de ellos son propietarios y por tal motivo no ofrecen documentación ni dan acceso a sus fuentes, por otra parte, hay otros que son libres y están muy bien documentados a disposición de todos los usuarios.
+
+Para poder mantener una comunicación a través de mensajería instantánea, es necesario hacer uso de un cliente que realice el servicio. En un primer momento cada servicio permitía conectarse únicamente con los usuarios que utilizaban ese mismo servicio. Más adelante veremos, que algunos protocolos hacen posible conectar varios servicios desde una misma cuenta.
+
+Con respecto a la seguridad, por norma general, los protocolos no implementan (o habilitaban por defecto) el cifrado de las comunicaciones, transmitiendo éstas en texto claro y quedando expuestas a numerosos ataques como el robo de información, suplantación de identidad, alteración de la información transmitida, entre otros.
 
 \subsection{MSNP}
 
-TODO: Alcance del trabajo/proyecto
+MSNP (Mobile Status Notification Protocol) es el protocolo de mensajería instantánea de Microsoft. El cliente oficial de mensajería instantánea era Windows Live Messenger. A pesar de la popularidad de Windows Live Messenger, en 2013 cancelaron el servicio forzando a sus usuarios a utilizar en su lugar Skype.
+
+A pesar de que el protocolo MSNP no es de código abierto, a través de técnicas de ingeniería inversa se ha podido conocer su funcionamiento. En la arquitectura del protocolo hay presentes tres tipos distintos de servidores utilizados para distintos procesos, siendo éstos 'Dispatch Server' (DS), 'Notification Server' (NS) y 'Switchboard Server' (SS).
 
 \subsection{OSCAR}
 
-TODO: Alcance del trabajo/proyecto
+OSCAR (Open System for Communication in Real-time) es el protocolo de mensajería instantánea de AOL. Este protocolo es implementado por los dos principales clientes de la compañía, AIM e ICQ. Al igual que ocurría con MSNP, OSCAR no es de código abierto pero también se ha podido acceder a una gran parte de su funcionamiento gracias a técnicas de ingeniería inversa.
+
+Al igual que MSNP, la arquitectura detrás de OSCAR consta de varios servidores con distintas finalidades, siendo los principales el 'Authorization Server' (AS) y el 'Basic OSCAR Service Server' (BOSS).
+
+Las conexiones con los servidores se realizan a través de distintos canales (frames). Gracias a estos canales es posible realizar comunicaciones paralelas sin necesidad de conectarse a múltiples servidores.
 
 \subsection{YMSG}
 
-TODO: Alcance del trabajo/proyecto
+El protocolo YMSG (Yahoo! Messenger) fue publicado en junio de 1999 y era similar a MSNP. Una de las novedades que introdujo fue su excelente integración con la Web. Al igual que ocurre con el resto de protocolos comentados, YMSG tampoco es de código abierto.
+
+Con respecto a la arquitectura, se trata de un sistema cliente-servidor pero que, al contrario que en los protocolos MSNP y OSCAR, el cliente se conecta con un servidor aleatorio y a través de él realizará el resto de transmisiones (autenticación, acceso a la lista de contactos, comunicación con otro usuario, etcétera).
 
 \subsection{XMPP}
 
-TODO: Alcance del trabajo/proyecto
+La especificación base de Jabber, más tarde XMPP, surgió en 1998 por Jeremie Miller, conocido como el primero de carácter abierto y tomado como protocolo por la comunidad open source en 1999, donde ha ido creciendo y evolucionando hasta la actualidad.
+
+XMPP (eXtensible Messaging and Presence Protocol) es un protocolo abierto y extensible, que establece una plataforma para el intercambio de datos en XML y que se utiliza principalmente en servicios de mensajería instantánea.
+
+Posee muchas implementaciones abiertas de servidores, clientes y librerías para las más diversas plataformas y lenguajes. Su funcionamiento topológico se basa en la clásica arquitectura cliente / servidor en la que no existen servidores centrales que gestionan el servicio sino que cualquier usuario puede crear su propio servidor XMPP.
+
+Este protocolo es utilizado en aplicaciones y servicios conocidos como Google Talk, Tuenti, Facebook y WhatsApp (con algunas variaciones del mismo adaptadas al funcionamiento propio del servicio).
+
+\clearpage
 
 \section{Aplicaciones web}
 
-TODO: Alcance del trabajo/proyecto
+Una aplicación web se basa en una arquitectura cliente/servidor, donde tanto el cliente (interfaz de usuario) como el servidor (servidor web) y el protocolo mediante el que se comunican (HTTP) están estandarizados y no han de ser creados por el desarrollador de aplicaciones.
+
+La arquitectura de una aplicación web suelen ajustarse a un modelo de tres capas. Este modelo supera las limitaciones de las arquitecturas ajustadas a un modelo de dos capas, introduciendo una capa intermedia (capa de proceso), entre la capa de presentación y  capa de datos. Cada capa es un proceso separado y bien definido corriendo en plataformas separadas.
+
+Las capas que pueden identificarse en la arquitectura de una aplicación web son:
+
+\begin{itemize}
+  \item Capa de presentación o cliente web. El cliente web es un programa con el que interacciona el usuario para solicitar a un servidor web el envío de los recursos que desea obtener mediante HTTP. El cliente web recoge la información del usuario a través de una interfaz de usuario y la envía a la capa de proceso, después recibe los resultados de la capa de proceso y presenta los resultados al usuario.
+  \item Capa de proceso o servidor web. El servidor web es un programa que está esperando permanentemente solicitudes de conexión, mediante el protocolo HTTP, por parte de la capa de presentación. En los sistemas Unix suele ser un demonio y en los sistemas Microsoft Windows un servicio. El servidor web recibe una petición por parte de la capa de presentación, éste interactúa con la capa de datos para realizar operaciones y envía los resultados procesados a la capa de presentación.
+  \item Capa de datos o servidor de base de datos. El servidor de base de datos proporciona y almacena datos relevantes para la aplicación. Además, también puede proporcionar la lógica de negocio u otra información administrada por el servidor web.
+\end{itemize}
+
+La interfaz de usuario no es requerida para comprender o comunicarse con el servidor de base de datos. La separación de roles en tres capas, hace más fácil reemplazar o modificar una capa sin afectar a las capas restantes.
 
 \subsection{Servidor web}
 
-TODO
+Los servidores web son intrínsecos al funcionamiento de las aplicaciones web, lo que exige la necesidad de un mayor énfasis en la arquitectura del servidor web, incluida la capacidad física del servidor: almacenamiento, memoria, potencia de cómputo y rendimiento, además de los niveles de la aplicación. Esto podría estar en cualquier lugar, ya sea dentro del servidor, a través de la red o los sistemas operativos.
+
+Los requisitos de una solución determinan el alcance de las arquitecturas de servidores web; por ejemplo, las soluciones pueden ser aplicaciones simples o de múltiples niveles.
+
+Los diferentes tipos de arquitectura de servidor web incluyen:
 
 \subsubsection{Java}
 
-TODO: Alcance del trabajo/proyecto
+En virtud de ser un lenguaje de programación versátil, Java es popular en el entorno de desarrollo empresarial.
+
+Independientemente de la complejidad o la naturaleza de la aplicación, una arquitectura de un servidor web en Java es la plataforma preferida por los desarrolladores para crear soluciones y entregarlas según las expectativas.
+
+Una de las ventajas distintivas de esta arquitectura es la capacidad de combinar y confiar en las herramientas nativas de Java y los frameworks para crear aplicaciones que abarcan todo el espectro, desde las aplicaciones más sencillas hasta las más complejas.
 
 \subsubsection{Node.js}
 
-TODO: Alcance del trabajo/proyecto
+Hace 24 años que Netscape creó JavaScript: un lenguaje de programación creado para manipular las páginas web mediante scripts dentro de su navegador web.
+
+En 2008 Google lanza su navegador Chrome, junto con su motor de JavaScript V8. Un año después Ryan Dahl usaría V8 como base para crear Node.js y cambiar la forma en que se conocía JavaScript.
+
+Node.js es un entorno open source de desarrollo de software o programación con el objetivo de cubrir ciertas necesidades de los programadores a la hora de trabajar con Javascript en el lado del servidor.
+
+Node.js utiliza un modelo de entrada/salida sin bloqueo controlado por eventos, de esta manera lo hace un entorno ligero y eficiente.
+
+Su propuesta se basa en el tratamiento de conexiones de forma unificada a partir de un único hilo complementado con un bucle de eventos de tipo asíncrono. De este modo las peticiones que se vayan haciendo reciben un tratamiento en forma de eventos y pertenecen a este único bucle.
+
+Este nuevo replanteamiento proporciona un lenguaje con la capacidad de gestionar una gran cantidad de solicitudes y conexiones con la máxima eficiencia.
 
 \subsection{Servidor de base de datos}
 
-TODO
+Los servidores de base de datos surgen en la década de los 80 con motivo de la necesidad de las empresas de manejar grandes y complejos volúmenes de datos, al tiempo que requieren compartir la información con un conjunto de clientes de una manera segura y debe proporcionar servicios de forma global y, en la medida de lo posible, independientemente de la plataforma.
+
+Un servidor de base de datos, también conocido como DBMS (acrónimo en inglés de DataBase Management System), es un software que permite la organización de información mediante el uso de tablas, índices y registros. Los servidores de bases de datos se utilizan en todo el mundo en una amplia variedad de aplicaciones.
+
+La información puede organizarse en tablas o en documentos. Cuando organizamos información en un Excel, lo hacemos en formato tabla y, cuando los médicos hacen fichas a sus pacientes, están guardando la información en documentos. Lo habitual es que las bases de datos basadas en tablas sean bases de datos relacionales y las basadas en documentos sean no relacionales, pero esto no tiene que ser así siempre.
+
+En realidad, una tabla puede transformarse en documentos, cada uno formado por cada fila de la tabla. Solo es una cuestión de visualización. Lo que pasa es que a menudo en una base de datos no relacional una unidad de datos puede llegar a ser demasiado compleja como para plasmarlo en una tabla.
 
 \subsubsection{Bases de datos SQL}
 
-TODO: Alcance del trabajo/proyecto
+Las bases de datos SQL son el modelo estándar de toda la vida y también el más utilizado en el mundo tecnológico. SQL es un lenguaje de peticiones estructuradas bastante robusto pero muy poco flexible.
+
+En el ámbito informático se habla mucho de ACID, cuyas siglas vienen de las palabras en inglés: atomicidad, consistencia, aislamiento y durabilidad. Son propiedades que las bases de datos relacionales aportan a los sistemas y les permiten ser más robustos y menos vulnerables ante fallos.
+
+La base de datos relacional más usada y conocida es MySQL junto con Oracle Database, seguida por Microsoft SQL Server, PostgreSQL y SQLite.
+
+Algunas ventajas de las bases de datos SQL son:
+
+\begin{itemize}
+  \item Es una tecnología ampliamente conocida y los perfiles que lo conocen son mayoritarios y más económicos.
+  \item Mayor soporte y mejores herramientas debido al largo tiempo que llevan en el mercado.
+  \item Los datos deben cumplir requisitos de integridad tanto en tipo de datos como en compatibilidad.
+  \item La atomicidad de las operaciones en la base de datos. Esto significa que si hay un error durante la petición a cualquier nivel de la operación, se devuelve al punto inicial sin comprometer los datos que fueron utilizados durante el proceso.
+\end{itemize}
 
 \subsubsection{Bases de datos NoSQL}
 
-TODO: Alcance del trabajo/proyecto
+Como su propio nombre indica, las bases de datos NoSQL (Not only SQL) son las que, a diferencia de la relacionales, no tienen un identificador que sirva de relación entre un conjunto de datos y otros. La información se organiza normalmente mediante documentos y es muy útil cuando no tenemos un esquema exacto de lo que se va a almacenar.
+
+Las bases de datos NoSQL son un modelo que se ha puesto muy de moda entre los desarrolladores full-stack porque no requiere un alto conocimiento académico de bases de datos y su curva de aprendizaje y practicidad lo hacen bastante atractivo para proyectos rápidos.
+
+NoSQL se compone generalmente de bases de datos, compuestas a su vez por colecciones que poseen documentos; también hay otras tecnologías NoSQL que poseen columnas y estructuras diferentes.
+
+La indiscutible reina del reciente éxito de las bases de datos NoSQL es MongoDB seguida por Redis, Elasticsearch, CouchDB y Apache Cassandra.
+
+Algunas ventajas de las bases de datos NoSQL son:
+
+\begin{itemize}
+  \item Su naturaleza descentralizada permite una alta escalabilidad. NoSQL es muy utilizada de una amplia forma en aplicaciones con Big Data.
+  \item Son mucho más abiertas y flexibles. Permiten adaptarse a necesidades de proyectos mucho más fácilmente que los modelos de Entidad-Relación.
+  \item Se pueden hacer cambios de los esquemas sin tener que parar la base de datos.
+  \item Escalabilidad horizontal: son capaces de crecer en número de máquinas, en vez de en cantidad de recursos de hardware en una sola máquina.
+  \item No necesita altos recursos para ejecutarse. Cualquier servidor con la mínima cantidad de recursos puede correr una base de datos no relacional.
+  \item Optimización de consultas en bases de datos para grandes cantidades de datos.
+\end{itemize}
 
 \subsection{Serialización de datos}
 
-TODO
+El universo de servicios y aplicaciones web disponibles hoy en día en Internet es tan inmenso como heterogéneo y muchos de ellos comparten información entre sí. Entonces, ¿cómo logramos que todos estos sistemas, siendo diferentes uno del otro, puedan transmitirse datos? Sencillo, gracias a los formatos de serialización de datos. De no ser por estos estándares creados para representar datos, esta tarea sería un verdadero infierno.
+
+Los sistemas necesitan formatos robustos, que permitan transmitir y compartir información compleja entre sistemas diferentes, con estructuras jerárquicas y atributos variables pero a su vez sean fáciles de leer por un humano. Es aquí donde entran estándares como XML, JSON y YAML.
+
+Los tres formatos de serialización mencionados tienen la misma extensión que su nombre (.xml, .json y .yaml respectivamente). Así que es más fácil de recordar. De hecho, las extensiones de archivo son arbitrarias para los tres estándares de serialización de datos. Es útil para la aplicación y los usuarios saber qué formato de archivos, tipo de contenido y estructura de datos se están utilizando.
+
+Gracias a estos formatos, podemos contar con servicios y aplicaciones que hacen más fácil la vida de desarrolladores y usuarios.
 
 \subsubsection{XML}
 
-TODO: Alcance del trabajo/proyecto
+XML (del inglés eXtensible Markup Language) es un lenguaje de marcado, al igual que HTML, que define un conjunto de reglas para codificar información de manera que sea legible por un ser humano y por un ordenador.
+
+XML es una evolución que se inició en el lenguaje GML creado por IBM. XML se usa ampliamente para transmitir información entre servicios web y para definir archivos de configuración. Uno de los lenguajes de programación que le da más soporte es Java.
+
+Una de las fortalezas de XML es el soporte a Unicode, lo que permite escribir la información en cualquier idioma del mundo y otra es el amplio soporte que tiene en la actualidad. Sin embargo, ha sido duramente criticado por su verbosidad y complejidad; mapear una estructura básica XML usando tipos de datos de un lenguaje de programación o bases de datos a veces puede ser muy difícil y poco descriptivo.
+
+Los documentos de texto, hojas de cálculo, páginas web y bases de datos son algunos de los campos de aplicación del XML. El metalenguaje aparece como un estándar que estructura el intercambio de información entre las diferentes plataformas.
 
 \subsubsection{JSON}
 
-TODO: Alcance del trabajo/proyecto
+Es un formato para intercambio de datos, un estándar abierto que utiliza texto plano para codificar información en la forma atributo-valor. Su nombre proviene del inglés JavaScript Object Notation y aunque en sus inicios fue considerado como una parte de JavaScript, siempre ha sido independiente del lenguaje de programación y se encuentra disponible para los lenguajes más populares.
+
+JSON es ampliamente usado para intercambio de información entre servicios web y REST APIs. Es usado especialmente en entornos donde el tamaño del flujo de datos es de vital importancia. Su simplicidad y facilidad de implementación le otorgan un gran desempeño y lo convierten en una de las alternativas ideales al momento de reemplazar XML.
 
 \subsubsection{YML}
 
-TODO: Alcance del trabajo/proyecto
+Su nombre proviene del inglés YAML Ain’t Another Markup Language. Es otro formato para el intercambio de información que tiene como objetivo facilitar el mapeo de estructuras de datos más complejas (como las listas) en un documento de texto plano legible por un ser humano. Si bien es un formato joven, sus características le han hecho ganarse un lugar importante en la web, junto con XML y JSON.
 
-\section{Tipos de arquitectura de aplicaciones web}
+YAML es más estricto que los anteriores pero también más simple. Estas características le otorgan elegancia y claridad, haciéndolo ideal para tareas que involucren intervención de un humano.
 
-TODO
-
-\subsection{SPA}
-
-TODO: Alcance del trabajo/proyecto
-
-\subsection{Microservicio}
-
-TODO: Alcance del trabajo/proyecto
-
-\subsection{Arquitectura sin servidor}
-
-TODO: Alcance del trabajo/proyecto
+La simplicidad también le otorga velocidad pero, a diferencia del JSON, no es usado en servicios web sino en archivos de configuración, depuración u otros fines en los que la facilidad de lectura juegan un rol importante.

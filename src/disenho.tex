@@ -1,12 +1,41 @@
 \chapter{EVALUACIÓN DE RIESGOS\label{sec:disenho}}
 
-TODO: Diseño del proyecto
+El objetivo principal que busca la ingeniería de software es convertir el desarrollo de software en un proceso formalizado, con resultados predecibles, que permitan obtener un producto final de alta calidad y satisfaga las necesidades y expectativas del cliente.
+
+Por esta razón, una fase importante es la representación simplificada del proceso para el desarrollo y evaluación de la solución software de este proyecto, desde una perspectiva que señala los beneficios y riesgos de las decisiones que tomamos en los diferentes marcos de trabajo.
+
+Como en un modelo de desarrollo de software, este capítulo rescata etapas como la especificación de requisitos, el diseño, la implementación y la evaluación, teniendo en cuenta los objetivos principales de este proyecto.
+
+\clearpage
 
 \section{Identificación de los requisitos no funcionales}
 
-\subsection{My112}
-
 \subsection{Centro 112 de Madrid}
+
+A día de hoy, el Centro 112 de Madrid, está consagrado como una gran central de gestión de emergencias que ofrece confianza y seguridad a los ciudadanos. Por lo que nos puede servir como punta de partida en la identificación de los requisitos no funcionales.
+
+Los aspectos más destacados del Centro 112 de Madrid son:
+
+\begin{itemize}
+  \item Funciona 24 horas al día y 365 días al año.
+  \item Cuenta con 241 profesionales, a los que se suman otros 200 de otros cuerpos y servicios de emergencias que también tienen presencia en el mismo centro de operaciones.
+  \item Atiende más de 4,5 millones de llamadas al año, según las últimas publicaciones, y el tiempo medio de respuesta, desde que se establece la llamada al 112 y el operador responde, es de tan solo 8 segundos. Y, que en 70 segundos, el operador ha enviado la emergencia al servicio correspondiente.
+  \item La sala de equipos está equipada con herramientas de integración de la telefonía en los puestos de trabajo (PCs), para facilitar el trabajo al operador de emergencias mediante el uso exclusivo de pantalla, teclado y ratón.
+  \item Tiene incorporado en su Sistema Integrado de Gestión de Emergencias (SIGE112) la app My112, permitiendo la localización del llamante mediante las coordenadas desde donde se está realizando la llamada.
+  \item Su modelo 112 está diseñado con criterios de escalabilidad.
+\end{itemize}
+
+Teniendo en cuenta esta información relevante, podemos definir los siguientes requisitos no funcionales que la solución software debe cumplir en todo momento:
+
+\begin{itemize}
+  \item Funcionamiento: durante 24 horas seguidas.
+  \item Participantes en la comunicación: entre dos o más personas.
+  \item Tiempo medio de respuesta: 8 segundos.
+  \item Duración media de la comunicación: 70 segundos.
+  \item Comunicaciones simultáneas: alrededor de 250.
+\end{itemize}
+
+\clearpage
 
 \section{Diseño del protocolo de mensajería instantánea}
 
@@ -16,6 +45,8 @@ TODO: Diseño del proyecto
 
 \subsection{JSON}
 
+\clearpage
+
 \section{Desarrollo del aplicación web}
 
 \subsection{MongoDB}
@@ -23,6 +54,8 @@ TODO: Diseño del proyecto
 \subsection{Node.js}
 
 \subsection{REST API}
+
+\clearpage
 
 \section{Plan de pruebas no funcionales}
 
