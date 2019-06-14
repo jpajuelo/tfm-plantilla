@@ -8,7 +8,7 @@ Como en un modelo de desarrollo de software, este capítulo rescata etapas como 
 
 \clearpage
 
-\section{Identificación de los requisitos no funcionales}
+\section{Identificación de los requisitos}
 
 Los requisitos no funcionales tienden a ser aquellos que reflejan la calidad del producto. Especifican los criterios que pueden usarse para juzgar el funcionamiento de un sistema como por ejemplo la disponibilidad, accesibilidad, usabilidad, mantenibilidad, seguridad o rendimiento.
 
@@ -187,7 +187,28 @@ Los siguientes son algunos de los beneficios y fortalezas de MongoDB:
   \item Flexibilidad. puede agregar nuevas columnas o campos en MongoDB sin afectar las filas existentes o el rendimiento de la aplicación.
 \end{itemize}
 
-\section{Plan de pruebas no funcionales}
+\subsection{Docker}
+
+Aunque, por su naturaleza, se asemejan a las clásicas máquinas virtuales, estamos hablando de algo más avanzado porque nos ofrecen una mayor eficiencia y sencillez.
+
+Para empezar, los contenedores de Docker comparten recursos con el sistema operativo sobre el que se ejecutan. De esta manera podemos arrancar o parar el contenedor rápidamente, mientras que las máquinas virtuales se aíslan del sistema operativo sobre el que trabajan y se comunican a través del hypervisor \cite{docker2}.
+
+La portabilidad de los contenedores hace que los problemas causados por cambiar el entorno donde está corriendo la aplicación se reduzcan a la mínima expresión.
+
+En cuanto al rendimiento, existen diferencias respecto a una virtualización de máquina completa. Los tiempos de arranque son menores. Además, el nivel de aislamiento es menor y ciertas partes de la memoria del contenedor están duplicadas, lo que permite ejecutar múltiples instancias del mismo contenedor sin que ello suponga una gran merma de la memoria.
+
+\subsubsection{Ventajas de los contenedores de Docker}
+
+Las ventajas de los contenedores Docker son:
+
+\begin{itemize}
+  \item Modularidad. El enfoque Docker para la creación de contenedores se centra en la capacidad de tomar una parte de una aplicación, para actualizarla o repararla, sin necesidad de tomar la aplicación completa.
+  \item Control de versiones de imágenes y capas. Cada archivo de imagen de Docker se compone de una serie de capas. Estas capas se combinan en una sola imagen. Una capa se crea cuando la imagen cambia. Docker reutiliza estas capas para construir nuevos contenedores, lo cual hace mucho más rápido el proceso de construcción.
+  \item Restauración. Probablemente la mejor parte de la creación de capas es la capacidad de restaurar. Si no te gusta la iteración actual de una imagen, restaura la versión anterior.
+  \item Implementación rápida. Solía demorar días desarrollar un nuevo hardware, ejecutarlo, proveerlo y facilitarlo. Y el nivel de esfuerzo y sobrecarga era extenuante. Los contenedores basados en Docker pueden reducir el tiempo de implementación a segundos.
+\end{itemize}
+
+\section{Diseño del entorno de pruebas}
 
 Una vez que tengamos probada y desplegada nuestra aplicación, se debe probar de forma automática las capacidades y debilidades del software y de la plataforma sobre la que está corriendo (infraestructura y dependencias), llevándola al límite, para comprobar su disponibilidad, estabilidad y resiliencia.
 
@@ -249,7 +270,10 @@ En una organización en la que los sistemas de producción se apagan y reinician
 
 Existen numerosas herramientas, tanto open source como privadas, para realizar las pruebas de rendimiento: NeoLoad, LoadRunner, LoadUI, WebLOAD, Artillery, etcétera. Una de las más populares es Apache JMeter.
 
-Apache JMeter es una herramienta para llevar a cabo simulaciones sobre cualquier recurso de software. Es una herramienta creada por Apache y está completamente escrita en JAVA.
+Apache JMeter es una herramienta para llevar a cabo simulaciones sobre cualquier recurso de software. Es una herramienta creada por Apache y está completamente escrita en Java.
 
 Apache Jmeter se suele usar para hacer pruebas de carga aunque también soporta aserciones para asegurar que los datos recibidos son correctos y muchas posibilidades a la hora de generar reportes.
 
+\subsubsection{Java}
+
+TODO

@@ -2,6 +2,8 @@
 
 Este capítulo vamos a comprender mejor cómo es el ámbito de los servicios de emergencias, sobre todo el estado actual de las aplicaciones de emergencias para móviles donde se enmarca el proyecto. Además, de las diferentes etapas o componentes que afectan en la integración de uno nuevo servicio a estas aplicaciones de emergencias.
 
+Las tendencias tecnológicas siguen evolucionando y cada día van apareciendo nuevos conceptos que debemos aprender.
+
 \clearpage
 
 \section{Servicios de emergencias}
@@ -528,3 +530,21 @@ Su nombre proviene del inglés YAML Ain’t Another Markup Language. Es otro for
 YAML es más estricto que los anteriores pero también más simple. Estas características le otorgan elegancia y claridad, haciéndolo ideal para tareas que involucren intervención de un humano.
 
 La simplicidad también le otorga velocidad pero, a diferencia del JSON, no es usado en servicios web sino en archivos de configuración, depuración u otros fines en los que la facilidad de lectura juegan un rol importante.
+
+\subsection{Virtualización}
+
+La mayoría de nosotros cuando escuchamos el concepto de virtualización pensamos inmediatamente en máquinas virtuales, pero es importante entender que este es solo un tipo de virtualización. Entendiendo lo anterior podemos definir los contenedores como otra alternativa de virtualización.
+
+En términos simples los contenedores crean la percepción de un ambiente aislado exclusivo para la aplicación mientras que en la virtualización “tradicional” de máquinas virtuales la aplicación se ejecuta en un sistema operativo virtualizado donde convive con otros aplicativos \cite{docker1}.
+
+\subsubsection{Docker}
+
+La idea detrás de Docker es crear contenedores ligeros y portables para las aplicaciones software que puedan ejecutarse en cualquier máquina con Docker instalado, independientemente del sistema operativo que la máquina tenga por debajo, facilitando así también los despliegues \cite{docker4}.
+
+El propósito de los contenedores es esta independencia: la capacidad de ejecutar varios procesos y aplicaciones por separado para hacer un mejor uso de su infraestructura y, al mismo tiempo, conservar la seguridad que tendría con sistemas separados \cite{docker5}.
+
+Las herramientas del contenedor, como Docker, ofrecen un modelo de implementación basado en imágenes. Esto permite compartir una aplicación, o un conjunto de servicios, con todas sus dependencias en varios entornos.
+
+Digamos que el contenedor de Docker toma los recursos más básicos, que no cambian de un ordenador a otro del sistema operativo de la máquina en la que se ejecuta. Y los aspectos más específicos del sistema que pueden dar más problemas a la hora de llevar el software de un lado a otro, se meten en el interior del contenedor.
+
+Que un contenedor Docker tome los aspectos básicos de funcionamiento del sistema operativo de la máquina en la que se ejecuta lo vuelve más ligero que una máquina virtual.

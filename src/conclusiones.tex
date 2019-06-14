@@ -96,13 +96,29 @@ Una herramienta muy importante, desde mi punto de vista, es el V8 Inspector. Muy
 
 La diferencia entre dos volcados de pila es un indicador de la cantidad de pérdida de memoria en una aplicación.
 
+\subsection{Beneficios de los contenedores de Docker}
+
+A efectos técnicos, Docker es una tecnología de virtualización “ligera” en el sentido de que, en lugar de replicar una máquina virtual completa, únicamente se virtualiza los servicios del contenedor \cite{docker3}.
+
+Docker es una herramienta diseñada para beneficiar tanto a desarrolladores como a testers.
+
+En el caso de los desarrolladores, el uso de Docker hace que puedan centrarse en desarrollar su código sin preocuparse de si dicho código funcionará en la máquina en la que se ejecutará.
+
+Por eso Docker también es muy bueno para el testing, para tener entornos de pruebas. Por un lado, es muy sencillo crear y borrar un contenedor, además de que son muy ligeros, por lo que podemos ejecutar varios contenedores en una misma máquina.
+
 \section{Implantación real del prototipo}
 
 TODO
 
-\subsection{Contenedores de Docker}
+\subsection{Virtualización}
 
-TODO
+Dependiendo del escenario, una u otra opción de virtualización puede ser la más apropiada.
+
+La tecnología de contenedores ayuda a obtener mayor flexibilidad y portabilidad pues las aplicaciones se pueden ejecutar, ya sea en las instalaciones físicas o en la nube.
+
+El nivel de paquetización consigue que una aplicación pueda ser trasladada de un ambiente a otro con mínimo o nulo impacto, permitiendo que en escenarios de alta carga el sistema pueda escalar clonando nuevas instancias de la aplicación muy rápido.
+
+Esto además beneficia a la parte de sistemas, ya que los contenedores son más ligeros que las máquinas virtuales, se reduce el número de máquinas necesarias para tener un entorno.
 
 \subsection{Instalación on-premise}
 
