@@ -1,12 +1,19 @@
 \chapter{EVALUACIÓN DE RIESGOS\label{sec:disenho}}
 
+\clearpage
+
 El objetivo principal que busca la ingeniería de software es convertir el desarrollo de software en un proceso formalizado, con resultados predecibles, que permitan obtener un producto final de alta calidad y satisfaga las necesidades y expectativas del cliente.
 
 Por esta razón, una fase importante es la representación simplificada del proceso para el desarrollo y evaluación de la solución software de este proyecto, desde una perspectiva que señala los beneficios y riesgos de las decisiones que tomamos en los diferentes marcos de trabajo.
 
 Como en un modelo de desarrollo de software, este capítulo rescata etapas como la especificación de requisitos, el diseño, la implementación y la evaluación, teniendo en cuenta los objetivos principales de este proyecto.
 
-\clearpage
+\begin{figure}[htp!]
+  \centering
+  \includegraphics[scale=0.2,clip=true]{waterfall_model}
+  \caption{Modelo de desarrollo de software}
+  \label{fig:waterfall_model}
+\end{figure}
 
 \section{Identificación de los requisitos}
 
@@ -104,6 +111,13 @@ Otra ventaja es que genera menos tráfico de red. Por ejemplo, si un cliente de 
 
 REST es una tecnología que transporta datos por medio del protocolo HTTP. Es tan flexible que permite transmitir prácticamente cualquier tipo de datos, ya que el tipo de datos está definido por la cabecera Content-Type, lo que nos permite mandar formatos como XML o JSON, binarios (imágenes, documentos), texto plano, entre otros más.
 
+\begin{figure}[htp!]
+  \centering
+  \includegraphics[scale=0.1,clip=true]{rest}
+  \caption{Arquitectura de REST}
+  \label{fig:rest}
+\end{figure}
+
 REST se caracteriza por no tener estado. Es decir, el servidor no es capaz de recordar el estado de la anterior solicitud REST que pudo, o no, hacer un cliente. Por ello, el cliente tiene que enviar en cada solicitud todo el estado de su sesión.
 
 REST viene para simplificar las cosas. Hoy REST y JSON se han convertido en la opción más sencilla y por tanto más recomendable para implementar una aplicación web.
@@ -137,11 +151,25 @@ Node.js resuelve este problema cambiando la forma en que se realiza una conexió
 
 Node.js emplea un único hilo y un event loop asíncrono. Las nuevas peticiones son tratadas como eventos en este bucle. Este es el motivo por el que las características asíncronas y los eventos de JavaScript encajan tan bien en la filosofía de Node.js.
 
+\begin{figure}[htp!]
+  \centering
+  \includegraphics[scale=0.2,clip=true]{nodejs_eventloop}
+  \caption{Event Loop de V8}
+  \label{fig:nodejs_eventloop}
+\end{figure}
+
 Esto permite que Node.js sea capaz de gestionar múltiples conexiones y peticiones de forma muy eficiente, lo que lo hace apropiado para desarrollo y aplicaciones con un gran número de conexiones simultáneas.
 
 \subsubsection{NPM}
 
 En un proyecto Node.js, el código se organiza por módulos o paquetes, así que al momento de trabajar con él va a ser necesario agregar más módulos, es aquí donde entra la herramienta NPM.
+
+\begin{figure}[htp!]
+  \centering
+  \includegraphics[scale=0.05,clip=true]{npm_logo}
+  \caption{Logo de NPM}
+  \label{fig:npm_logo}
+\end{figure}
 
 Node Package Manager, o simplemente npm, es un gestor de paquetes, el cual hará más fácil nuestras vidas al momento de trabajar con Node.js, ya que gracias a él podremos tener cualquier librería disponible con solo una línea de código. NPM nos ayudará a administrar nuestros módulos, distribuir paquetes y agregar dependencias de una manera sencilla.
 
@@ -154,6 +182,13 @@ Los frameworks para Node.js se utilizan principalmente debido a su productividad
 Al usar un framework, puedes trabajar con un conjunto de herramientas, directrices y prácticas recomendadas que lo ayudan a ahorrar tiempo. También puede ayudar a consolidar los estándares de código en un equipo de desarrolladores.
 
 Express.js es un framework web rápido, flexible y minimalista para Node.js. Es simplemente una tecnología basada en Node.js que se comporta como un middleware para ayudar a administrar nuestros servicios y rutas.
+
+\begin{figure}[htp!]
+  \centering
+  \includegraphics[scale=0.2,clip=true]{express_logo}
+  \caption{Logo de Express.js}
+  \label{fig:express_logo}
+\end{figure}
 
 Express.js ha demostrado, con el tiempo, que su popularidad vale la pena con sus métodos y funciones fáciles de usar. Probablemente sea el framework web para Node.js más popular disponible para la comunidad de JavaScript en GitHub con más de 41,000 estrellas.
 
@@ -174,6 +209,13 @@ Es importante saber en qué se diferencian y cuál deberíamos usar en cada caso
 La diferencia fundamental entre ambos tipos de base de datos radica en que las bases de datos NoSQL no hacen uso de un modelo relacional. Si tu proyecto necesita una escalabilidad importante, donde los recursos son escasos y no necesita respetar la integridad de los datos, entonces sí: NoSQL es la mejor opción.
 
 A la hora de hacer una aplicación web, existen varias soluciones para cada uno de los grandes componentes que forman una aplicación completa. Si el servidor web está en Node.js, MongoDB es la base de datos NoSQL que tiene más éxito entre este tipo de aplicaciones.
+
+\begin{figure}[htp!]
+  \centering
+  \includegraphics[scale=0.1,clip=true]{mongodb_logo}
+  \caption{Logo de MongoDB}
+  \label{fig:mongodb_logo}
+\end{figure}
 
 \subsubsection{Beneficios de MongoDB}
 
@@ -271,6 +313,13 @@ En una organización en la que los sistemas de producción se apagan y reinician
 Existen numerosas herramientas, tanto open source como privadas, para realizar las pruebas de rendimiento: NeoLoad, LoadRunner, LoadUI, WebLOAD, Artillery, etcétera. Una de las más populares es Apache JMeter.
 
 Apache JMeter es una herramienta para llevar a cabo simulaciones sobre cualquier recurso de software. Es una herramienta creada por Apache y está completamente escrita en Java.
+
+\begin{figure}[htp!]
+  \centering
+  \includegraphics[scale=0.3,clip=true]{jmeter_logo}
+  \caption{Logo de Apache JMeter}
+  \label{fig:jmeter_logo}
+\end{figure}
 
 Apache Jmeter se suele usar para hacer pruebas de carga aunque también soporta aserciones para asegurar que los datos recibidos son correctos y muchas posibilidades a la hora de generar reportes.
 

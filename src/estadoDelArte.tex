@@ -1,12 +1,10 @@
 \chapter{ESTADO DEL ARTE\label{sec:estado_del_arte}}
 
-Este capítulo vamos a comprender mejor cómo es el ámbito de los servicios de emergencias, sobre todo el estado actual de las aplicaciones de emergencias para móviles donde se enmarca el proyecto. Además, de las diferentes etapas o componentes que afectan en la integración de uno nuevo servicio a estas aplicaciones de emergencias.
+\clearpage
 
 Las tendencias tecnológicas siguen evolucionando y cada día van apareciendo nuevos conceptos que debemos aprender.
 
-\clearpage
-
-\section{Servicios de emergencias}
+\section{Servicios de emergencia}
 
 Desde 1998, los países de la Unión Europea tienen la obligación de garantizar que los usuarios de teléfonos fijos y móviles puedan llamar sin coste alguno al número de emergencia 112 para comunicar una incidencia de cualquier tipo.
 
@@ -16,6 +14,13 @@ Si la llamada se hace a través de un teléfono fijo, el centro de atención de 
 
 El gran aumento de los viajeros dentro de la Unión Europea hizo que el Consejo de la Unión Europea decidiera introducir un número de emergencia común en todos los estados para evitar la necesidad de recordar diferentes números nacionales dependiendo de la ubicación.
 
+\begin{figure}[htp!]
+  \centering
+  \includegraphics[scale=0.05,clip=true]{112_logo}
+  \caption{112, número de emergencia europeo}
+  \label{fig:112_logo}
+\end{figure}
+
 Este número de emergencia europeo fue el 112 y, desde entonces, se encuentra disponible de forma gratuita, 24 horas al día, los 365 días al año, en cualquier lugar de la Unión Europea. Un ciudadano puede marcar el 112 para comunicarse con los servicios de emergencia, incluida también la policía, los servicios de asistencia médica y el cuerpo de bomberos.
 
 La llamada de emergencia a un centro 112 puede realizarse aunque no se disponga de cobertura del operador de red que estemos usando, pero sí de algún otro, pues se utiliza la red GSM (Global System for Mobile communications) que haya disponible. El teléfono móvil realiza la llamada de voz igualmente si se desconoce el PIN e incluso si el teléfono no tiene introducida la tarjeta SIM en el terminal o la pantalla está bloqueada.
@@ -23,6 +28,13 @@ La llamada de emergencia a un centro 112 puede realizarse aunque no se disponga 
 \subsection{EENA}
 
 La Asociación del Número de Emergencia Europeo o EENA (acrónimo en inglés de European Emergency Number Association) cree que tener un número de emergencia común en todas partes de Europa está beneficiando directamente a los ciudadanos y visitantes pero desafortunadamente, este número que puede salvar vidas es en gran parte desconocido.
+
+\begin{figure}[htp!]
+  \centering
+  \includegraphics[scale=0.4,clip=true]{eena_logo}
+  \caption{Logo de EENA}
+  \label{fig:eena_logo}
+\end{figure}
 
 EENA es una organización sin ánimo de lucro con base en Bruselas y establecida en 1999 con el objetivo de promover servicios de emergencia de calidad a través del número de emergencia 112 en toda Europa. Esta organización proporciona una plataforma de intercambio de información y experiencias entre los servicios de emergencia, autoridades públicas, investigadores y la industria de la tecnología con el objetivo de mejorar la respuesta a las situaciones de emergencia de acuerdo a los requisitos de los usuarios.
 
@@ -32,29 +44,78 @@ EENA, basándose en diferentes fuentes, ha diseñado los modelos 112. Los modelo
 
 En este modelo las llamadas a números nacionales y al 112 son redirigidas a las  Organizaciones de Respuesta de Emergencia (ERO, acrónimo en inglés de Emergency Response Organisation). Si se requiere la intervención de una ERO diferente, la llamada y/o los datos sobre la situación de emergencia se envían a la ERO más adecuada. En una variante, dos EROS son colocadas y contactadas a través del mismo número.
 
+\begin{figure}[htp!]
+  \centering
+  \includegraphics[width=0.75\textwidth,clip=true]{modelo112_1}
+  \caption{Modelo 112 de Austria, Francia, Alemania e Italia}
+  \label{fig:modelo112_1}
+\end{figure}
+
 \subsubsection{Modelo de filtrado de llamadas y envío de recursos}
 
 En este modelo las llamadas a números nacionales y al 112 son redirigidas a las  Organizaciones de Respuesta de Emergencia (ERO, acrónimo en inglés de Emergency Response Organisation). Si se requiere la intervención de una ERO diferente, la llamada y/o los datos sobre la situación de emergencia se envían a la ERO más adecuada. En una variante, dos EROS son colocadas y contactadas a través del mismo número.
+
+\begin{figure}[htp!]
+  \centering
+  \includegraphics[width=0.75\textwidth,clip=true]{modelo112_2}
+  \caption{Modelo 112 de Reino Unido e Irlanda}
+  \label{fig:modelo112_2}
+\end{figure}
 
 \subsubsection{Modelo de recogida de datos y envío de recursos}
 
 La diferencia respecto al modelo 2 es el papel que juegan las organizaciones independientes. Los operadores clasifican la llamada y hacen un envio paralelo de las llamadas a las EROs. En algunos casos, los especialistas de las EROs están disponibles para dar soporte a los operadores. Las EROs se encargan del envío de los recursos de intervención.
 
+\begin{figure}[htp!]
+  \centering
+  \includegraphics[width=0.75\textwidth,clip=true]{modelo112_3}
+  \caption{Modelo 112 de Rumanía}
+  \label{fig:modelo112_3}
+\end{figure}
+
 \subsubsection{Modelo de recogida de datos y envío de recursos en la misma sala de control}
 
 Este modelo también se realiza en dos niveles. Los operadores y las EROs se encuentran en el mismo lugar. Los operadores están a cargo de clasificar la llamada y, en el caso que sea necesario, hacer un envio paralelo de las llamadas a las EROs más apropiadas. En algunos casos, los especialistas de las EROs están disponibles para dar soporte a los operadores. Las EROs se encargan del envío los recursos de intervención.
+
+\begin{figure}[htp!]
+  \centering
+  \includegraphics[width=0.75\textwidth,clip=true]{modelo112_4}
+  \caption{Modelo 112 de algunas Comunidades Autónomas de España, Bélgica y Túrquia}
+  \label{fig:modelo112_4}
+\end{figure}
 
 \subsubsection{Modelo donde las EROs y el PSAP son independientes}
 
 En este modelo, los operadores se hacen cargo tanto de la atención de las llamadas como del envío de los recursos de intervención. En algunos casos, los especialistas de las EROs están disponibles para dar soporte a los operadores. El mismo PSAP se encarga de la clasificación de las llamadas, la recogida de datos y el envío de los recursos de intervención a la incidencia.
 
+\begin{figure}[htp!]
+  \centering
+  \includegraphics[width=0.75\textwidth,clip=true]{modelo112_5}
+  \caption{Modelo 112 de Finlandia}
+  \label{fig:modelo112_5}
+\end{figure}
+
 \subsubsection{Modelo donde las PSAPs están interconectados}
 
 Los PSAP de diferentes regiones se pueden interconectar. Si no hay disponible un operador, la llamada puede ser redirigida a otro PSAP.
 
+\begin{figure}[htp!]
+  \centering
+  \includegraphics[width=0.75\textwidth]{modelo112_6}
+  \caption{Modelo 112 de Bulgaria, República Checa y Suecia}
+  \label{fig:modelo112_6}
+\end{figure}
+
 \subsection{Centro 112 de Madrid}
 
 El teléfono 112 se activó en la Comunidad de Madrid el 1 de enero de 1998 para atender, tratar y evaluar todas las llamadas de emergencia de los madrileños. Ese año recibió alrededor de un millón de llamadas. A día de hoy, la cifra supera los 86,6 millones, lo que lo consagra como una gran central de gestión de emergencias que ofrece confianza y seguridad a los ciudadanos.
+
+\begin{figure}[htp!]
+  \centering
+  \includegraphics[scale=0.3,clip=true]{madrid112_logo}
+  \caption{Logo de Madrid 112}
+  \label{fig:madrid112_logo}
+\end{figure}
 
 El Centro 112 de Madrid está diseñado bajo un criterio multiservicio que permite integrar operativamente a todos los organismos de emergencia, mediante los acuerdos precisos para definir los procedimientos que determinan cuándo hay que activar cada servicio. Todo ello, con independencia de que se encuentren integrados físicamente en el Centro 112, como sucede con los principales, o que sus sedes estén ubicadas fuera del Centro.
 
@@ -62,28 +123,28 @@ El Centro 112 de la Comunidad de Madrid, ha incorporado en su Sistema Integrado 
 
 El trabajo de los profesionales, junto con el desarrollo tecnológico, sirve para optimizar la asistencia y para que la gestión del 112 de la Comunidad de Madrid haya obtenido la norma ISO 22320, siendo el único de España en tener este certificado de calidad.
 
-\subsubsection{Modelo 112}
+\subsubsection{Modelo Madrid 112}
 
 Los procedimientos determinan también los intercambios de información necesarios para conocer en todo momento el desarrollo de la gestión de la incidencia. Este tipo de modelo, determina que el trabajo se desarrolle a dos niveles:
 
 \begin{enumerate}
-  \item Recepción, atención y gestión de la llamada. Este proceso corresponde a Madrid 112 y tiene por finalidad, partiendo de la información de cada llamada, activar los servicios precisos que tienen que resolver la emergencia.
-  \item Movilización y gestión de recursos. Corresponde a los organismos de intervención directa en la emergencia la activación de los recursos adecuados para la resolución de la emergencia. La actividad operativa que corresponde a Madrid 112 se desarrolla fundamentalmente en la sala de operaciones.
+  \item \textbf{Recepción, atención y gestión de la llamada}. Este proceso corresponde a Madrid 112 y tiene por finalidad, partiendo de la información de cada llamada, activar los servicios precisos que tienen que resolver la emergencia.
+  \item \textbf{Movilización y gestión de recursos}. Corresponde a los organismos de intervención directa en la emergencia la activación de los recursos adecuados para la resolución de la emergencia. La actividad operativa que corresponde a Madrid 112 se desarrolla fundamentalmente en la sala de operaciones.
 \end{enumerate}
 
 El modelo de Madrid 112 está diseñado con criterios de escalabilidad que nos permiten ir incorporando los avances de las nuevas tecnologías.
 
-\subsubsection{Plataforma tecnológica}
+\subsubsection{Atributos de la plataforma tecnológica}
 
 La plataforma tecnológica goza de una serie de atributos, al objeto de brindar un soporte eficaz a la gestión de las emergencias, tales como:
 
 \begin{itemize}
-  \item Capacidad, para atender la potencial demanda de emergencias de los más de 6 millones de ciudadanos existentes en el ámbito territorial de la Comunidad de Madrid. Número al que se deben añadir las personas en tránsito y turistas. El Centro 112 goza de un excedente de capacidad, espacial, operativa y tecnológica para poder hacer frente a casos extremos de catástrofe o gran emergencia, a sabiendas de que lo que funciona bien en el régimen ordinario, lo hará también en el extraordinario.
-  \item Seguridad, entendida como el aseguramiento de la prestación continuada del Servicio 24 h/día, 365 días/año. Este aseguramiento se sustenta en que el suministro de energía está garantizado mediante doble acometida exterior y la existencia de grupos electrógenos con capacidad de soportar y redundar las necesidades energéticas del Centro. El aseguramiento de las comunicaciones y la información se soporta en la redundancia de elementos críticos de los sistemas, y en la existencia de un centro de respaldo del principal.
-  \item Flexibilidad e integrabilidad, características que toman cuerpo en la existencia de un sistema de integración radiotelefónica, capaz de integrar redes de radio de distinta tecnología que conviven en la Comunidad de Madrid y facilitando la interoperabilidad de todos los efectivos de emergencia que actúan en nuestra Comunidad.
+  \item \textbf{Capacidad}, para atender la potencial demanda de emergencias de los más de 6 millones de ciudadanos existentes en el ámbito territorial de la Comunidad de Madrid. Número al que se deben añadir las personas en tránsito y turistas. El Centro 112 goza de un excedente de capacidad, espacial, operativa y tecnológica para poder hacer frente a casos extremos de catástrofe o gran emergencia, a sabiendas de que lo que funciona bien en el régimen ordinario, lo hará también en el extraordinario.
+  \item \textbf{Seguridad}, entendida como el aseguramiento de la prestación continuada del Servicio 24 h/día, 365 días/año. Este aseguramiento se sustenta en que el suministro de energía está garantizado mediante doble acometida exterior y la existencia de grupos electrógenos con capacidad de soportar y redundar las necesidades energéticas del Centro. El aseguramiento de las comunicaciones y la información se soporta en la redundancia de elementos críticos de los sistemas, y en la existencia de un centro de respaldo del principal.
+  \item \textbf{Flexibilidad e integrabilidad}, características que toman cuerpo en la existencia de un sistema de integración radiotelefónica, capaz de integrar redes de radio de distinta tecnología que conviven en la Comunidad de Madrid y facilitando la interoperabilidad de todos los efectivos de emergencia que actúan en nuestra Comunidad.
 \end{itemize}
 
-\section{Servicios de emergencias de nueva generación}
+\section{Servicios de emergencia de nueva generación}
 
 En 20 países es posible acceder los servicios de emergencia a través de SMS al 112, incluido en España. También se puede en Bélgica, Croacia, Estonia, Finlandia, Francia, Irlanda, Letonia, Lituania, Luxemburgo, Rumanía, Eslovenia, Suecia y Reino Unido. También se puede, pero sólo a través de un número más largo, en Austria, Chipre, Dinamarca, Italia, Malta y Portugal.
 
@@ -98,6 +159,13 @@ Para que el 112 siga funcionando en toda la Unión Europa de manera equivalente 
 En vista de que muchos teléfonos móviles han tenido información de ubicación muy precisa durante varios años, el operador de PSAP de Etapa 1 del Reino Unido, British Telecom, junto con sus socios, establecieron un proyecto, conocido como AML (son las siglas de Advanced Mobile Location).
 
 AML permite que la tecnología de teléfonos inteligentes pase datos de ubicación basados en GNSS o WiFi a servicios de emergencias a través de SMS o HTTPS. En la gran mayoría de los casos, AML proporciona ubicaciones exteriores e interiores con una precisión de menos de 50m y 25m de radio respectivamente.
+
+\begin{figure}[htp!]
+  \centering
+  \includegraphics[scale=0.3,clip=true]{aml_radius}
+  \caption{Localización sin AML vs con AML}
+  \label{fig:aml_radius}
+\end{figure}
 
 Hace mucho tiempo que Android integró AML en todos sus dispositivos. En cambio, Apple integró AML en la actualización de iOS 11.3 en marzo de 2018 y funciona en un perímetro de menos de 100 metros en el 63% de los casos.
 
@@ -128,6 +196,13 @@ Pero AML todavía tiene algunas limitaciones, la principal es que no se ha exten
 
 Android incluye AML, desde la versión Gingerbread OS en adelante, a través del Servicio de Ubicación de Emergencia (ELS, por sus siglas en inglés, Emergency Location Service). ELS fue anunciada por Google en Julio de 2016 y ha sido una de las noticias más importantes de la industria en los últimos años.
 
+\begin{figure}[htp!]
+  \centering
+  \includegraphics[scale=0.3,clip=true]{els_integration}
+  \caption{Infraestructura de ELS}
+  \label{fig:els_integration}
+\end{figure}
+
 Android ELS ayuda a los operadores de redes móviles, a los proveedores de infraestructura de emergencia y a los gobiernos a proporcionar información de ubicación más precisa a los PSAPs durante una emergencia. Cuando los servicios de emergencia reciben una llamada, deben conocer la ubicación de la persona que llama para enviar ayuda y salvar vidas.
 
 Android ELS es compatible con más del 99\% de los dispositivos Android existentes (versión 4.0 y posteriores) a través de Google Play Services. Este servicio está disponible hoy en día y continúan interactuando activamente con los países y socios para hacer que ELS esté más disponible.
@@ -137,6 +212,13 @@ Android ELS es compatible con más del 99\% de los dispositivos Android existent
 Actualmente, los servicios de emergencia solo son accesibles mediante llamadas telefónicas de voz, por lo que, tienen que cambiar su tecnología para ser parte del futuro; es decir, tener más en cuenta las comunicaciones basadas en Internet.
 
 NG112 (Next Generation 112), un proyecto de EENA, busca la integración de las nuevas tecnologías en los servicios de emergencias, para recibir no solo voz, sino también información de ubicación, texto en tiempo real, ficheros multimedia, videollamadas y otra información relevante.
+
+\begin{figure}[htp!]
+  \centering
+  \includegraphics[scale=0.3,clip=true]{ng112_landscape}
+  \caption{Panorama de NG112}
+  \label{fig:ng112_landscape}
+\end{figure}
 
 Una de las razones, por las que desarrolló NG112, fue que los ciudadanos usan comunicaciones basadas en IP todos los días y quieren comunicarse con los servicios de emergencia utilizando estos métodos.
 
@@ -157,6 +239,13 @@ EENA empezó en 2016 a desarrollar un proyecto que busca que las apps que conect
 
 EENA, junto con la empresa francesa Deveryware y la empresa italiana Beta 80, presentó a finales del mes de abril de 2018, el proyecto PEMEA (Pan-European Mobile Emergency App). PEMEA es un estándar ETSI, desarrollado bajo el proyecto H2020 NEXES, que busca la interconexión de apps de emergencias.
 
+\begin{figure}[htp!]
+  \centering
+  \includegraphics[scale=0.05,clip=true]{pemea_logo}
+  \caption{Logo de PEMEA}
+  \label{fig:pemea_logo}
+\end{figure}
+
 El objetivo de PEMEA es que una persona que llama por una emergencia pueda usar cualquier app de emergencias en cualquier lugar de Europa. Permitiendo a cualquier PSAP recibir información vital de la persona que llama, como idiomas o discapacidades, y una ubicación precisa para una respuesta de emergencia más rápida y efectiva.
 
 Además, PEMEA define roles y responsabilidades así como formatos de intercambio de datos y un modelo general de seguridad de manera que los PSAPs puedan asegurarse de la veracidad de la información que les está siendo facilitada a través de la app, y a su vez los usuarios de la app pueden estar seguros de que la información que facilitan no está siendo usada indebidamente.
@@ -176,6 +265,13 @@ La arquitectura PEMEA lleva a cabo los siguientes pasos a la hora de atender una
   \item Finalmente, el PSAP obtiene la información enviada y el usuario recibe la ayuda necesaria.
 \end{enumerate}
 
+\begin{figure}[htp!]
+  \centering
+  \includegraphics[scale=0.3,clip=true]{pemea_network}
+  \caption{Arquitectura de PEMEA}
+  \label{fig:pemea_network}
+\end{figure}
+
 \section{Apps de emergencias}
 
 En un principio, la razón de añadir las apps de emergencias fue el uso de las capacidades de localización de alta precisión que incluyen los teléfonos móviles de hoy en día, para que dicha información pudiese ser enviada a los PSAPs.
@@ -187,6 +283,13 @@ Aunque actualmente existen cientos de apps de emergencias, éstas no están inte
 \subsection{My112}
 
 My112 es una app con la que podemos comunicarnos con el servicio de emergencias de ciertas comunidades autónomas de España. La app está disponible tanto en Android como en iOS y, por supuesto, de forma gratuita y sin anuncios. Es sencillo de usar: antes de llamar al 112 para cualquier emergencia, usamos la app para enviar nuestra ubicación actual, incluso si queremos, como información adicional, enviar también fotografías de lo que sucede. De este modo, enviamos mayor información de la emergencia a los PSAPs.
+
+\begin{figure}[htp!]
+  \centering
+  \includegraphics[scale=0.2,clip=true]{my112_logo}
+  \caption{Logo de My112}
+  \label{fig:my112_logo}
+\end{figure}
 
 My112 no está disponible en toda Europa, ni siquiera en toda España. Sólo funciona si la utilizamos en determinadas comunidades autónomas. Actualmente, My112 es compatible con los centros 112 de Madrid, Castilla y León, Islas Baleares, Cataluña, Cantabria y Melilla.
 
@@ -214,6 +317,13 @@ Todas parten sobre la misma base, chat de texto, voz e incluso videollamada, y l
 
 Skype es el cliente de mensajería instantánea de Microsoft, que además se puede usar para comunicarse a través de voz y vídeo. Al ser multiplataforma, está disponible en Windows, Mac y Linux, así como en aplicaciones para tablets y smartphones.
 
+\begin{figure}[htp!]
+  \centering
+  \includegraphics[scale=0.2,clip=true]{skype_logo}
+  \caption{Logo de Skype}
+  \label{fig:skype_logo}
+\end{figure}
+
 Skype fundamentalmente lo asociamos con las videoconferencias, donde podemos comunicarnos simultáneamente con hasta 10 usuarios.  La posibilidad de llamadas de voz a través de Skype, incluso a teléfonos convencionales si tenemos créditos o estamos en un plan de pago hacen que sea una opción muy atractiva para tener instalada en el teléfono móvil.
 
 Su apuesta por Skype Qik para compartir mensajes de vídeo entre amigos, es una opción interesante con la que trata de ganar terreno entre los usuarios.
@@ -222,17 +332,35 @@ Su apuesta por Skype Qik para compartir mensajes de vídeo entre amigos, es una 
 
 Facebook Chat, lanzada en 2008 por Facebook, fue la punta de lanza que renovó al mundo de la mensajería instantánea. En 2011 dio el salto definitivo en las apps con el lanzamiento de Facebook Messenger. Ahora no solo permite compartir archivos, sino también mensajes de voz, llamadas y videollamadas entre otras características como las reacciones ante las imágenes que recibimos de otros usuarios.
 
+\begin{figure}[htp!]
+  \centering
+  \includegraphics[scale=0.2,clip=true]{facebook_logo}
+  \caption{Logo de Facebook Messenger}
+  \label{fig:facebook_logo}
+\end{figure}
+
 Este es el cliente de mensajería instantánea de Facebook, que hoy en día se ofrece únicamente en dispositivos móviles (Android, iPhone, Windows Phone y BlackBerry) o mediante la página oficial de Facebook. Hace tiempo que se volvió independiente, y es uno de los más importantes en todo el mundo.
 
 \subsection{WhatsApp}
 
 El gran revulsivo en el ámbito de la mensajería instantánea, que ha llevado esta solución a ganar popularidad en los smartphones. Es una aplicación que ganó popularidad rápidamente y que fue adquirida por Facebook en 2014. Funciona en iOS, Android, BlackBerry, Windows Phone, Nokia, Symbian y Tizen. El nombre de usuario se define a través del número de teléfono, y ofrece soluciones para poder trabajar con él desde un PC.
 
+\begin{figure}[htp!]
+  \centering
+  \includegraphics[scale=0.05,clip=true]{whatsapp_logo}
+  \caption{Logo de WhatsApp}
+  \label{fig:whatsapp_logo}
+\end{figure}
+
 WhatsApp es para muchos la app de mensajería instantánea más importante del mundo. WhatsApp se lanzó en 2009 y hasta la fecha continúa dando sorpresas tras cada actualización. Mensajes instantáneos, llamadas de voz, videollamadas, notas de voz, compartir archivos y chats grupales son las características que hacen a WhatsApp la app líder en el mundo.
 
 \section{Tecnologías de comunicación en tiempo real}
 
-TODO
+Uno de los grandes retos para la web fue permitir la comunicación humana a través de la voz y el vídeo: la comunicación en tiempo real o RTC (Real Time Communication). RTC debería ser tan natural en una aplicación web cómo la mensajería instantánea basada en texto. Sin ella, estábamos limitados en nuestra capacidad de innovar y desarrollar nuevas formas para que las personas interactúen \cite{webrtc3}.
+
+No hay duda de que la VoIP (Voice over Internet Protocol) es una tecnología que está cambiando completamente el sistema de comunicación de las empresas. Convierte la voz en paquetes de datos para que trabaje a través de Internet y tu puedas disfrutar de una telefonía más efectiva con más prestaciones y mayor calidad \cite{webrtc2}.
+
+Si ya has visto muchos sitios web de proveedores de VoIP, probablemente hayas encontrado un montón de acrónimos raros, como WebRTC o SIP.
 
 \subsection{IM}
 
@@ -268,11 +396,54 @@ La forma en que la comunicación ocurre se puede describir de la siguiente maner
 
 \subsection{SIP}
 
-TODO
+SIP proviene de Session Initiation Protocol y es la tecnología más utilizada por los proveedores de telefonía IP. Es la razón de la revolución de los sistemas de comunicaciones. Ha mejorado la telefonía tradicional añadiendo muchas funcionalidades útiles para las empresas, como la mensajería instantánea o las conferencias telefónicas \cite{webrtc2}.
+
+El protocolo SIP, desarrollado por el grupo MMUSIC, te permite recibir o realizar llamadas de voz a través de Internet, utilizando para ello terminales IP especiales, o bien de software (softphones) o de hardware \cite{webrtc1}.
+
+\subsubsection{Beneficios y riesgos de utilizar SIP}
+
+Las ventajas de utilizar SIP son:
+
+\begin{itemize}
+  \item \textbf{Buena calidad de llamada}. La calidad de llamada en el protocolo SIP, aunque siempre ha sido cuestionada, podemos decir que es buena, siempre y cuando cuentes con una buena conexión de Internet. Si recibes por datos o en una zona con mala cobertura de Internet notarás como desciende mucho la calidad.
+  \item \textbf{Experiencia}. El protocolo SIP está más que testeado ya que tiene muchos años de vida.
+  \item \textbf{Gran abanico de posibilidades}. Es mucho más ofertado por las empresas de telefonía por lo que tienes más donde elegir.
+\end{itemize}
+
+Las desventajas de utilizar SIP son:
+
+\begin{itemize}
+  \item \textbf{Poca versatilidad}. En cuanto a la flexibilidad y versatilidad del servicio, el protocolo SIP pierde claramente ya que para recibir o emitir llamadas tienes que hacerlo a través de terminales IP o softphones, por lo que estás más limitado.
+  \item \textbf{Relación calidad/precio}. La relación calidad/precio en este caso no es tan buena ya que normalmente tienes que efectuar una gran inversión en equipos para poder utilizarlo, además las empresas que lo ofrecen suelen ser algo más caras.
+  \item \textbf{Alta Inversión inicial}. El protocolo SIP necesita terminales especiales para funcionar. Tienes varias opciones, o bien utilizar softphones que podrás instalar en tu móvil o bien adquirir terminales IP que requieren una gran inversión inicial.
+\end{itemize}
 
 \subsection{WebRTC}
 
-TODO
+La tecnología WebRTC es un software de código abierto desarrollado por Google y que te permite realizar o recibir llamadas de voz a través del navegador o de una app \cite{webrtc1}. Transporta la voz utilizando las aplicaciones del navegador, por lo que, a diferencia del SIP, no necesitarás ningún dispositivo adicional. Puedes usarlo en tu smartphone o tablet descargando una aplicación, o en tu PC usando un par de auriculares \cite{webrtc2}.
+
+\begin{figure}[htp!]
+  \centering
+  \includegraphics[scale=0.3,clip=true]{webrtc_logo}
+  \caption{Logo de WebRTC}
+  \label{fig:webrtc_logo}
+\end{figure}
+
+WebRTC significa Web Real Time Communication y es una tecnología de estándares abiertos que permite comunicaciones en tiempo real nativamente desde un navegador web, sin la necesidad de descargas adicionales o plugins, gracias a una API de JavaScript y el códec VP8. \cite{webrtc3}
+
+WebRTC se utiliza en varias aplicaciones como WhatsApp, Facebook Messenger, appear.in y plataformas como TokBox \cite{webrtc3}.
+
+\subsubsection{Beneficios y riesgos de utilizar WebRTC}
+
+Las ventajas de utilizar WebRTC son:
+
+\begin{itemize}
+  \item \textbf{Completa Versatilidad}. Una de las mayores ventajas del protocolo WebRTC es la versatilidad que ofrece. Al poder utilizarse en cualquier dispositivo sin necesidad de disponer de un terminal especial, puedes utilizarlo en cualquier lugar del mundo siempre que cuentes con un dispositivo con conexión a Internet.
+  \item \textbf{Excelente calidad de llamada}. El protocolo WebRTC es capaz de modular la voz dependiendo del nivel de datos y la cobertura de la conexión a Internet de la que dispongas en cada momento para que la calidad de la voz siempre sea buena \cite{webrtc1}.
+  \item \textbf{Relación calidad/precio}. Las empresas que ofrecen WebRTC normalmente ofertan soluciones más económicas que sus competidoras las que ofrecen soluciones SIP y con resultados más competitivos.
+  \item \textbf{Sin inversión inicial}. Si lo utilizas desde tu ordenador, simplemente tendrás que adquirir unos auriculares con micrófono y si lo utilizas desde el móvil, ni eso. Por lo que te ahorrarás ese desembolso inicial en terminales especiales que suele ser bastante elevado.
+  \item \textbf{Interfaz online}. Al ser un protocolo que se utiliza a través del navegador, contarás con una interfaz online mucho más visual que en un terminal IP.
+\end{itemize}
 
 \section{Estrategias de comunicación en tiempo real}
 
@@ -316,6 +487,13 @@ El flujo de una implementación con long pooling es la siguiente:
   \item El cliente manda una nueva petición hasta que la anterior fue contestada, así, esta nueva recibirá respuesta hasta que haya nuevos datos.
 \end{enumerate}
 
+\begin{figure}[htp!]
+  \centering
+  \includegraphics[scale=0.3,clip=true]{long_polling}
+  \caption{Funcionamiento de Long polling}
+  \label{fig:long_polling}
+\end{figure}
+
 La clara diferencia entre el long pooling y el pooling es que en esta mejora de la estrategia anterior, no se envía peticiones constantes, más bien se envía una inicial y las siguientes sólo se envían hasta que hubo una respuesta previa, con datos actualizados. Esto reduce drásticamente la cantidad de peticiones que enviamos hacia el servidor.
 
 Las ventajas del long pooling son las siguientes:
@@ -337,6 +515,13 @@ Las desventajas son más difíciles de identificar, pero sucede:
 
 En 2010, justo en la cúspide de la popularidad del término HTML5, se introdujo al navegador la habilidad de establecer conexión a dos vías, directamente con el servidor, el protocolo WebSocket.
 
+\begin{figure}[htp!]
+  \centering
+  \includegraphics[scale=0.2,clip=true]{websocket_logo}
+  \caption{Logo de WebSocket}
+  \label{fig:websocket_logo}
+\end{figure}
+
 WebSocket es un protocolo que permite crear un canal de comunicación bidireccional (full-duplex) sobre una única conexión TCP. Está pensado para ser implementado en navegadores y servidores web, aunque no hay ningún impedimento a la hora de implementarlo en cualquier otro tipo de aplicación que siga el modelo cliente/servidor.
 
 Es el mismo concepto de los clásicos sockets de UNIX, pero en la Web, y con la idea de facilitar la transferencia de datos en tiempo real entre un cliente y un servidor web. Siendo una comunicación bidireccional, el servidor web puede enviar la información directamente al cliente durante la conexión.
@@ -347,19 +532,47 @@ Las comunicaciones se realizan a través de los mismos puertos que utiliza HTTP 
 
 El protocolo se divide en dos partes: la negociación y la transferencia de datos. Como este coexiste con HTTP, la primera comunicación debe realizarse necesariamente a través de una petición HTTP. Por ello, la negociación de apertura comienza con una petición upgrade por parte del cliente, que tiene el siguiente aspecto:
 
+\begin{figure}[htp!]
+  \centering
+  \includegraphics[scale=0.4,clip=true]{websocket_1}
+  \caption{Pentición Upgrade del cliente}
+  \label{fig:websocket_1}
+\end{figure}
+
 Cabe destacar que la elección del método GET es una decisión arbitraria tomada por los autores del borrador que finalmente quedó plasmada en el RFC. Aun así, es el único método que contempla el estándar y, por tanto, el único que se debe utilizar. Por su parte, si todo va bien, el servidor responde con un estado 101 (switching protocols), que tiene el aspecto que sigue:
+
+\begin{figure}[htp!]
+  \centering
+  \includegraphics[scale=0.4,clip=true]{websocket_2}
+  \caption{Respuesta de la petición Upgrade}
+  \label{fig:websocket_2}
+\end{figure}
 
 En ambos casos, tanto en la petición como en la respuesta, se incluyen una serie de cabeceras: obligatorias de HTTP/1.1 (Host), necesarias para establecer la negociación (Upgrade, Connection y Sec-WebSocket-*) o por cuestiones relacionadas con modelo de seguridad escogido para el protocolo (Origin).
 
 Una vez el cliente y el servidor han cumplido con su parte de la negociación, y únicamente si no ha ocurrido ningún error, comienza la transferencia de información. A partir de ese momento cada parte puede enviar información a placer sin depender de la otra, cosa imposible de hacer con HTTP, AJAX, las tecnologías push en general o técnicas más específicas como long polling.
 
+\begin{figure}[htp!]
+  \centering
+  \includegraphics[scale=0.3,clip=true]{websocket}
+  \caption{Funcionamiento de WebSocket}
+  \label{fig:websocket}
+\end{figure}
+
 Por último, cuando una de las partes decide que ya no hay nada más que transmitir, es posible cerrar la conexión mediante una negociación de cierre. Esta se inicia enviando un mensaje de control específico, al cual el otro extremo responde con otro mensaje de control para confirmar que el cierre es acordado. La negociación de cierre está pensada para ir acompañada del cierre de la conexión TCP.
 
-\subsection{SEE}
+\subsection{SSE}
 
 A diferencia de los WebSockets, los Server-Sent Events (SSE) son un canal de comunicación unidireccional donde los eventos fluyen del servidor a cliente únicamente. Los eventos enviados por el servidor permiten que los clientes del navegador reciban un stream de eventos a través de una conexión HTTP sin polling \cite{sse2}.
 
 Un cliente se suscribe a un "stream" de un servidor y el servidor enviará mensajes, event-stream, al cliente hasta que el servidor o el cliente cierre el stream. Depende del servidor decidir cuándo y qué enviar al cliente, por ejemplo, tan pronto como cambian los datos.
+
+\begin{figure}[htp!]
+  \centering
+  \includegraphics[scale=0.3,clip=true]{sse}
+  \caption{Funcionamiento de SSE}
+  \label{fig:sse}
+\end{figure}
 
 SSE es un estándar que describe cómo los servidores inicializan la transmisión de datos con el cliente una vez una conexión de cliente inicial se establece. Esta tecnología fue propuesta por el WHATWG (Web Hypertext Application Technology Working Group) y se implementó por primera vez en el navegador web Opera en el año 2006 \cite{sse1}.
 
@@ -399,6 +612,13 @@ La especificación base de Jabber, más tarde XMPP, surgió en 1998 por Jeremie 
 
 XMPP (eXtensible Messaging and Presence Protocol) es un protocolo abierto y extensible, que establece una plataforma para el intercambio de datos en XML y que se utiliza principalmente en servicios de mensajería instantánea.
 
+\begin{figure}[htp!]
+  \centering
+  \includegraphics[scale=0.2,clip=true]{xmpp_logo}
+  \caption{Logo de XMPP}
+  \label{fig:xmpp_logo}
+\end{figure}
+
 Posee muchas implementaciones abiertas de servidores, clientes y librerías para las más diversas plataformas y lenguajes. Su funcionamiento topológico se basa en la clásica arquitectura cliente / servidor en la que no existen servidores centrales que gestionan el servicio sino que cualquier usuario puede crear su propio servidor XMPP.
 
 Este protocolo es utilizado en aplicaciones y servicios conocidos como Google Talk, Tuenti, Facebook y WhatsApp (con algunas variaciones del mismo adaptadas al funcionamiento propio del servicio).
@@ -407,15 +627,29 @@ Este protocolo es utilizado en aplicaciones y servicios conocidos como Google Ta
 
 Una aplicación web se basa en una arquitectura cliente/servidor, donde tanto el cliente (interfaz de usuario) como el servidor (servidor web) y el protocolo mediante el que se comunican (HTTP) están estandarizados y no han de ser creados por el desarrollador de aplicaciones.
 
+\begin{figure}[htp!]
+  \centering
+  \includegraphics[scale=0.2,clip=true]{modelo_client_server}
+  \caption{Arquitectura cliente/servidor}
+  \label{fig:modelo_client_server}
+\end{figure}
+
 La arquitectura de una aplicación web suelen ajustarse a un modelo de tres capas. Este modelo supera las limitaciones de las arquitecturas ajustadas a un modelo de dos capas, introduciendo una capa intermedia (capa de proceso), entre la capa de presentación y  capa de datos. Cada capa es un proceso separado y bien definido corriendo en plataformas separadas.
 
 Las capas que pueden identificarse en la arquitectura de una aplicación web son:
 
 \begin{itemize}
-  \item Capa de presentación o cliente web. El cliente web es un programa con el que interacciona el usuario para solicitar a un servidor web el envío de los recursos que desea obtener mediante HTTP. El cliente web recoge la información del usuario a través de una interfaz de usuario y la envía a la capa de proceso, después recibe los resultados de la capa de proceso y presenta los resultados al usuario.
-  \item Capa de proceso o servidor web. El servidor web es un programa que está esperando permanentemente solicitudes de conexión, mediante el protocolo HTTP, por parte de la capa de presentación. En los sistemas Unix suele ser un demonio y en los sistemas Microsoft Windows un servicio. El servidor web recibe una petición por parte de la capa de presentación, éste interactúa con la capa de datos para realizar operaciones y envía los resultados procesados a la capa de presentación.
-  \item Capa de datos o servidor de base de datos. El servidor de base de datos proporciona y almacena datos relevantes para la aplicación. Además, también puede proporcionar la lógica de negocio u otra información administrada por el servidor web.
+  \item \textbf{Capa de presentación o cliente web}. El cliente web es un programa con el que interacciona el usuario para solicitar a un servidor web el envío de los recursos que desea obtener mediante HTTP. El cliente web recoge la información del usuario a través de una interfaz de usuario y la envía a la capa de proceso, después recibe los resultados de la capa de proceso y presenta los resultados al usuario.
+  \item \textbf{Capa de proceso o servidor web}. El servidor web es un programa que está esperando permanentemente solicitudes de conexión, mediante el protocolo HTTP, por parte de la capa de presentación. En los sistemas Unix suele ser un demonio y en los sistemas Microsoft Windows un servicio. El servidor web recibe una petición por parte de la capa de presentación, éste interactúa con la capa de datos para realizar operaciones y envía los resultados procesados a la capa de presentación.
+  \item \textbf{Capa de datos o servidor de base de datos}. El servidor de base de datos proporciona y almacena datos relevantes para la aplicación. Además, también puede proporcionar la lógica de negocio u otra información administrada por el servidor web.
 \end{itemize}
+
+\begin{figure}[htp!]
+  \centering
+  \includegraphics[scale=0.3,clip=true]{aplicacion_web}
+  \caption{Arquitectura de una aplicación web}
+  \label{fig:aplicacion_web}
+\end{figure}
 
 La interfaz de usuario no es requerida para comprender o comunicarse con el servidor de base de datos. La separación de roles en tres capas, hace más fácil reemplazar o modificar una capa sin afectar a las capas restantes.
 
@@ -431,15 +665,36 @@ Los diferentes tipos de arquitectura de servidor web incluyen:
 
 En virtud de ser un lenguaje de programación versátil, Java es popular en el entorno de desarrollo empresarial.
 
+\begin{figure}[htp!]
+  \centering
+  \includegraphics[scale=0.1,clip=true]{java_logo}
+  \caption{Logo de Java}
+  \label{fig:java_logo}
+\end{figure}
+
 Independientemente de la complejidad o la naturaleza de la aplicación, una arquitectura de un servidor web en Java es la plataforma preferida por los desarrolladores para crear soluciones y entregarlas según las expectativas.
 
 Una de las ventajas distintivas de esta arquitectura es la capacidad de combinar y confiar en las herramientas nativas de Java y los frameworks para crear aplicaciones que abarcan todo el espectro, desde las aplicaciones más sencillas hasta las más complejas.
+
+\begin{figure}[htp!]
+  \centering
+  \includegraphics[scale=0.2,clip=true]{java_server}
+  \caption{Arquitectura basada en Java}
+  \label{fig:java_server}
+\end{figure}
 
 \subsubsection{Node.js}
 
 Hace 24 años que Netscape creó JavaScript: un lenguaje de programación creado para manipular las páginas web mediante scripts dentro de su navegador web.
 
 En 2008 Google lanza su navegador Chrome, junto con su motor de JavaScript V8. Un año después Ryan Dahl usaría V8 como base para crear Node.js y cambiar la forma en que se conocía JavaScript.
+
+\begin{figure}[htp!]
+  \centering
+  \includegraphics[scale=0.2,clip=true]{nodejs_logo}
+  \caption{Logo de Node.js}
+  \label{fig:nodejs_logo}
+\end{figure}
 
 Node.js es un entorno open source de desarrollo de software o programación con el objetivo de cubrir ciertas necesidades de los programadores a la hora de trabajar con Javascript en el lado del servidor.
 
@@ -449,6 +704,13 @@ Su propuesta se basa en el tratamiento de conexiones de forma unificada a partir
 
 Este nuevo replanteamiento proporciona un lenguaje con la capacidad de gestionar una gran cantidad de solicitudes y conexiones con la máxima eficiencia.
 
+\begin{figure}[htp!]
+  \centering
+  \includegraphics[scale=0.2,clip=true]{nodejs_server}
+  \caption{Arquitectura basada en Node.js}
+  \label{fig:nodejs_server}
+\end{figure}
+
 \subsection{Servidor de base de datos}
 
 Los servidores de base de datos surgen en la década de los 80 con motivo de la necesidad de las empresas de manejar grandes y complejos volúmenes de datos, al tiempo que requieren compartir la información con un conjunto de clientes de una manera segura y debe proporcionar servicios de forma global y, en la medida de lo posible, independientemente de la plataforma.
@@ -456,6 +718,13 @@ Los servidores de base de datos surgen en la década de los 80 con motivo de la 
 Un servidor de base de datos, también conocido como DBMS (acrónimo en inglés de DataBase Management System), es un software que permite la organización de información mediante el uso de tablas, índices y registros. Los servidores de bases de datos se utilizan en todo el mundo en una amplia variedad de aplicaciones.
 
 La información puede organizarse en tablas o en documentos. Cuando organizamos información en un Excel, lo hacemos en formato tabla y, cuando los médicos hacen fichas a sus pacientes, están guardando la información en documentos. Lo habitual es que las bases de datos basadas en tablas sean bases de datos relacionales y las basadas en documentos sean no relacionales, pero esto no tiene que ser así siempre.
+
+\begin{figure}[htp!]
+  \centering
+  \includegraphics[scale=0.4,clip=true]{sql_vs_nosql}
+  \caption{SQL vs NoSQL}
+  \label{fig:sql_vs_nosql}
+\end{figure}
 
 En realidad, una tabla puede transformarse en documentos, cada uno formado por cada fila de la tabla. Solo es una cuestión de visualización. Lo que pasa es que a menudo en una base de datos no relacional una unidad de datos puede llegar a ser demasiado compleja como para plasmarlo en una tabla.
 
@@ -484,7 +753,14 @@ Las bases de datos NoSQL son un modelo que se ha puesto muy de moda entre los de
 
 NoSQL se compone generalmente de bases de datos, compuestas a su vez por colecciones que poseen documentos; también hay otras tecnologías NoSQL que poseen columnas y estructuras diferentes.
 
-La indiscutible reina del reciente éxito de las bases de datos NoSQL es MongoDB seguida por Redis, Elasticsearch, CouchDB y Apache Cassandra.
+La indiscutible reina del éxito de las bases de datos NoSQL es MongoDB seguida por Redis, Elasticsearch, CouchDB y Apache Cassandra.
+
+\begin{figure}[htp!]
+  \centering
+  \includegraphics[scale=0.3,clip=true]{nosql_landscape}
+  \caption{Panorama de soluciones NoSQL}
+  \label{fig:nosql_landscape}
+\end{figure}
 
 Algunas ventajas de las bases de datos NoSQL son:
 
@@ -502,6 +778,13 @@ Algunas ventajas de las bases de datos NoSQL son:
 El universo de servicios y aplicaciones web disponibles hoy en día en Internet es tan inmenso como heterogéneo y muchos de ellos comparten información entre sí. Entonces, ¿cómo logramos que todos estos sistemas, siendo diferentes uno del otro, puedan transmitirse datos? Sencillo, gracias a los formatos de serialización de datos. De no ser por estos estándares creados para representar datos, esta tarea sería un verdadero infierno.
 
 Los sistemas necesitan formatos robustos, que permitan transmitir y compartir información compleja entre sistemas diferentes, con estructuras jerárquicas y atributos variables pero a su vez sean fáciles de leer por un humano. Es aquí donde entran estándares como XML, JSON y YAML.
+
+\begin{figure}[htp!]
+  \centering
+  \includegraphics[scale=0.6,clip=true]{xml_json_yaml}
+  \caption{XML vs JSON vs YAML}
+  \label{fig:xml_json_yaml}
+\end{figure}
 
 Los tres formatos de serialización mencionados tienen la misma extensión que su nombre (.xml, .json y .yaml respectivamente). Así que es más fácil de recordar. De hecho, las extensiones de archivo son arbitrarias para los tres estándares de serialización de datos. Es útil para la aplicación y los usuarios saber qué formato de archivos, tipo de contenido y estructura de datos se están utilizando.
 
@@ -535,11 +818,32 @@ La simplicidad también le otorga velocidad pero, a diferencia del JSON, no es u
 
 La mayoría de nosotros cuando escuchamos el concepto de virtualización pensamos inmediatamente en máquinas virtuales, pero es importante entender que este es solo un tipo de virtualización. Entendiendo lo anterior podemos definir los contenedores como otra alternativa de virtualización.
 
+\begin{figure}[htp!]
+  \centering
+  \includegraphics[scale=0.4,clip=true]{vm}
+  \caption{Virtualización}
+  \label{fig:vm}
+\end{figure}
+
 En términos simples los contenedores crean la percepción de un ambiente aislado exclusivo para la aplicación mientras que en la virtualización “tradicional” de máquinas virtuales la aplicación se ejecuta en un sistema operativo virtualizado donde convive con otros aplicativos \cite{docker1}.
+
+\begin{figure}[htp!]
+  \centering
+  \includegraphics[scale=0.5,clip=true]{vm_container}
+  \caption{Máquina virtual vs Contenedor}
+  \label{fig:vm_container}
+\end{figure}
 
 \subsubsection{Docker}
 
 La idea detrás de Docker es crear contenedores ligeros y portables para las aplicaciones software que puedan ejecutarse en cualquier máquina con Docker instalado, independientemente del sistema operativo que la máquina tenga por debajo, facilitando así también los despliegues \cite{docker4}.
+
+\begin{figure}[htp!]
+  \centering
+  \includegraphics[scale=0.1,clip=true]{docker_logo}
+  \caption{Logo de Docker}
+  \label{fig:docker_logo}
+\end{figure}
 
 El propósito de los contenedores es esta independencia: la capacidad de ejecutar varios procesos y aplicaciones por separado para hacer un mejor uso de su infraestructura y, al mismo tiempo, conservar la seguridad que tendría con sistemas separados \cite{docker5}.
 
@@ -548,3 +852,10 @@ Las herramientas del contenedor, como Docker, ofrecen un modelo de implementaci�
 Digamos que el contenedor de Docker toma los recursos más básicos, que no cambian de un ordenador a otro del sistema operativo de la máquina en la que se ejecuta. Y los aspectos más específicos del sistema que pueden dar más problemas a la hora de llevar el software de un lado a otro, se meten en el interior del contenedor.
 
 Que un contenedor Docker tome los aspectos básicos de funcionamiento del sistema operativo de la máquina en la que se ejecuta lo vuelve más ligero que una máquina virtual.
+
+\begin{figure}[htp!]
+  \centering
+  \includegraphics[scale=0.3,clip=true]{vm_vs_docker}
+  \caption{Máquina virtual vs Docker}
+  \label{fig:vm_vs_docker}
+\end{figure}
