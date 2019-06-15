@@ -2,13 +2,15 @@
 
 \clearpage
 
-TODO
+A continuación, se detallan las conclusiones del trabajo sobre los resultados y las observaciones obtenidas durante el desarrollo de la solución software.
 
 \section{Conclusiones técnicas}
 
+Desde un punto de vista técnico, es interesante resaltar los beneficios y riesgos que han aportado las tecnologías elegidas para este proyecto.
+
 \subsection{Beneficios de las pruebas de software}
 
-Las pruebas de software ahorran tiempo y dinero a una organización al reducir los costos de desarrollo y mantenimiento del software. Las pruebas de software crean garantías de estabilidad en el desarrollo de nuevas características.
+Las pruebas de software ahorran tiempo y dinero a una organización al reducir los costos de desarrollo y mantenimiento del software \cite{test1}. Las pruebas de software crean garantías de estabilidad en el desarrollo de nuevas características.
 
 El tiempo de desarrollo de las nuevas funciones se reduce especificando un conjunto de casos de prueba que la nueva característica debe cumplir para que se considere completa y entregable. Una vez que estos casos de prueba están en su lugar, los costos generales de mantenimiento se reducen.
 
@@ -79,29 +81,29 @@ En este proyecto hemos optado por crear el backend con Node.js, ya que este ofre
 
 \subsection{Memory leaks en Node.js}
 
-La pérdida de memoria es muy común en las aplicaciones de Node.js, especialmente en las de gran escala con tráfico razonable, y muchas empresas grandes la han sufrido.
+La pérdida de memoria es muy común en las aplicaciones de Node.js, especialmente en las de gran escala con tráfico razonable, y muchas empresas grandes la han sufrido \cite{nodejs3}.
 
-Una aplicación de Node.js se inicia sólo una vez, no para cada solicitud entrante. Esto hace que el manejo peticiones sea más rápido, ya que solo hace la lógica para cada petición. sin necesidad de trabajo repetitivo, también ahorra los recursos necesarios para este proceso de iniciación.
+Una aplicación de Node.js se inicia sólo una vez, no para cada solicitud entrante. Esto hace que el manejo peticiones sea más rápido, ya que solo hace la lógica para cada petición. sin necesidad de trabajo repetitivo, también ahorra los recursos necesarios para este proceso de iniciación \cite{nodejs3}.
 
-Pero esto conlleva un precio, que tienes que ocuparse del uso de la memoria de la aplicación, ya que consumirá la memoria continuamente durante su tiempo de ejecución y, si no se maneja el uso de la memoria de manera eficiente, puede agotarse la memoria.
+Pero esto conlleva un precio, que tienes que ocuparse del uso de la memoria de la aplicación, ya que consumirá la memoria continuamente durante su tiempo de ejecución y, si no se maneja el uso de la memoria de manera eficiente, puede agotarse la memoria \cite{nodejs3}.
 
 \subsubsection{Causas comunes de memory leak}
 
-Teniendo en cuenta la gestión de memoria en Node.js, podemos definir tres de las causas más comunes de pérdida de memoria que deberíamos tener cuidado al usarlas en un código:
+Teniendo en cuenta la gestión de memoria en Node.js, podemos definir tres de las causas más comunes de pérdida de memoria que deberíamos tener cuidado al usarlas en un código \cite{nodejs3}:
 
 \begin{itemize}
-  \item Variables globales. Dado que tienen una ruta directa al nodo raíz, permanecerán en la memoria mientras la aplicación se esté ejecutando, por lo que se debe tener cuidado al configurar las variables globales y la cantidad de datos que se establecerá en ellas.
-  \item Referencias múltiples. La configuración de varias referencias al mismo objeto también puede causar problemas, ya que puede eliminar una referencia y olvidar la otra, lo que mantendrá el objeto en cuestión ocupando espacio.
-  \item Closures. En los closures, simplemente mantiene las referencias a los objetos que se utilizarán más adelante. esta característica tiene muchas ventajas, pero si se usa sin precaución, puede causar grandes problemas, ya que estas referencias mantendrán a los objetos en la pila y estos pueden ser grandes.
+  \item \textbf{Variables globales}. Dado que tienen una ruta directa al nodo raíz, permanecerán en la memoria mientras la aplicación se esté ejecutando, por lo que se debe tener cuidado al configurar las variables globales y la cantidad de datos que se establecerá en ellas.
+  \item \textbf{Referencias múltiples}. La configuración de varias referencias al mismo objeto también puede causar problemas, ya que puede eliminar una referencia y olvidar la otra, lo que mantendrá el objeto en cuestión ocupando espacio.
+  \item \textbf{Closures}. En los closures, simplemente mantiene las referencias a los objetos que se utilizarán más adelante. esta característica tiene muchas ventajas, pero si se usa sin precaución, puede causar grandes problemas, ya que estas referencias mantendrán a los objetos en la pila y estos pueden ser grandes.
 \end{itemize}
 
 \subsubsection{V8 Inspector y Chrome DevTools}
 
-Existen muchas herramientas y bibliotecas que se utilizan para detectar memory leaks en Node.js, todas siguen el mismo concepto para detectar memory leaks de comparar diferentes volcados de pila (heap dump) y verificar los resultados, e intentan forzar la ejecución del garbage collector antes de tomar cualquier head dump para hacer asegurarse de que la pérdida es real.
+Existen muchas herramientas y bibliotecas que se utilizan para detectar memory leaks en Node.js, todas siguen el mismo concepto para detectar memory leaks de comparar diferentes volcados de pila (heap dump) y verificar los resultados, e intentan forzar la ejecución del garbage collector antes de tomar cualquier head dump para hacer asegurarse de que la pérdida es real \cite{nodejs3}.
 
 Una herramienta muy importante, desde mi punto de vista, es el V8 Inspector. Muy útil, especialmente cuando se usa con Chrome DevTools en la fase de desarrollo, ya que te permite monitorear el rendimiento de uso de la memoria para verificar si hay alguna pérdida potencial en el código y encontrar dónde podría ocurrir exactamente esa pérdida.
 
-La diferencia entre dos volcados de pila es un indicador de la cantidad de pérdida de memoria en una aplicación.
+La diferencia entre dos volcados de pila es un indicador de la cantidad de pérdida de memoria en una aplicación \cite{nodejs3}.
 
 \subsection{Beneficios de los contenedores de Docker}
 
@@ -115,7 +117,7 @@ Por eso Docker también es muy bueno para el testing, para tener entornos de pru
 
 \section{Implantación real del prototipo}
 
-TODO
+Respecto a los resultados, es interesante conocer qué siguientes etapas o tecnologías pueden jugar un papel importante en la fase de integración de la solución software en los servicios de emergencias.
 
 \subsection{Virtualización}
 
@@ -129,17 +131,17 @@ Esto además beneficia a la parte de sistemas, ya que los contenedores son más 
 
 \subsection{Instalación on-premise}
 
-El término on-premise se refiere al tipo de instalación de una solución de software. Esta instalación se lleva a cabo dentro de la infraestructura de la empresa, asumiendo la responsabilidad de la seguridad, la disponibilidad y la gestión del software. Por lo que debe tener un departamento que dedique parte de sus recursos a la gestión de la infraestructura in situ. El proveedor de la solución software también puede proporcionar servicios de integración y soporte post-venta.
+El término on-premise se refiere al tipo de instalación de una solución de software \cite{premise4}. Esta instalación se lleva a cabo dentro de la infraestructura de la empresa, asumiendo la responsabilidad de la seguridad, la disponibilidad y la gestión del software. Por lo que debe tener un departamento que dedique parte de sus recursos a la gestión de la infraestructura in situ. El proveedor de la solución software también puede proporcionar servicios de integración y soporte post-venta.
 
-La instalación on-premise suele estar más asociada a empresas que buscan resultados profesionales, evitando tomar riesgos con servidores sobrecargados o revelación de datos internos.
+La instalación on-premise suele estar más asociada a empresas que buscan resultados profesionales, evitando tomar riesgos con servidores sobrecargados o revelación de datos internos \cite{premise1}.
 
 \subsubsection{Ventajas de la instalación on-premise}
 
 Aunque la inversión inicial sea más arriesgada, ofrece ventajas como una mayor control del software. Por ello, hay que tener en cuenta algunos aspectos a la hora de decidir una instalación on-premise:
 
 \begin{itemize}
-  \item Coste. Reduce el precio de una solución a largo plazo, aunque la inversión inicial puede ser más arriesgada.
-  \item Seguridad. La seguridad de los datos está en las manos de la empresa.
-  \item Personalización. Facilidad de personalización.
-  \item Implementación. La empresa tiene más control sobre el proceso de implementación, pero este proceso puede tomar más tiempo.
+  \item \textbf{Coste}. Reduce el precio de una solución a largo plazo, aunque la inversión inicial puede ser más arriesgada \cite{premise4}.
+  \item \textbf{Seguridad}. La seguridad de los datos está en las manos de la empresa.
+  \item \textbf{Personalización}. Facilidad de personalización.
+  \item \textbf{Implementación}. La empresa tiene más control sobre el proceso de implementación, pero este proceso puede tomar más tiempo \cite{premise4}.
 \end{itemize}

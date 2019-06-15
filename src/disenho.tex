@@ -2,11 +2,11 @@
 
 \clearpage
 
-El objetivo principal que busca la ingeniería de software es convertir el desarrollo de software en un proceso formalizado, con resultados predecibles, que permitan obtener un producto final de alta calidad y satisfaga las necesidades y expectativas del cliente.
+El objetivo principal que busca la ingeniería de software es convertir el desarrollo de software en un proceso formalizado, con resultados predecibles, que permitan obtener un producto final de alta calidad y satisfaga las necesidades y expectativas del cliente \cite{modelo1}.
 
 Por esta razón, una fase importante es la representación simplificada del proceso para el desarrollo y evaluación de la solución software de este proyecto, desde una perspectiva que señala los beneficios y riesgos de las decisiones que tomamos en los diferentes marcos de trabajo.
 
-Como en un modelo de desarrollo de software, este capítulo rescata etapas como la especificación de requisitos, el diseño, la implementación y la evaluación, teniendo en cuenta los objetivos principales de este proyecto.
+Como en un modelo de desarrollo de software, se rescatan etapas como la especificación de requisitos, el diseño, la implementación y la evaluación, teniendo en cuenta los objetivos principales de este proyecto.
 
 \begin{figure}[htp!]
   \centering
@@ -17,7 +17,11 @@ Como en un modelo de desarrollo de software, este capítulo rescata etapas como 
 
 \section{Identificación de los requisitos}
 
+Ya hemos visto que existen actualmente varias soluciones de comunicación en tiempo real, como IM, SIP o WebRTC. Pero, ¿cuál de ellas es más fácil de integrar en un modelo 112? Desde un punto de vista tecnológico, la opción más sencilla es IM ya que SIP o WebRTC requieren muchos mas módulos que un único servidor web que haga de cliente de mensajería instantánea basada en texto.
+
 Los requisitos no funcionales tienden a ser aquellos que reflejan la calidad del producto. Especifican los criterios que pueden usarse para juzgar el funcionamiento de un sistema como por ejemplo la disponibilidad, accesibilidad, usabilidad, mantenibilidad, seguridad o rendimiento.
+
+Por lo que otro punto importante a tener en cuenta, es la identificación de los requisitos no funcionales a partir de la información de algún centro 112 que gestione un gran número de llamadas al año.
 
 \subsection{Mensajería instantánea}
 
@@ -37,10 +41,10 @@ A día de hoy, el Centro 112 de Madrid, está consagrado como una gran central d
 Los aspectos más destacados del Centro 112 de Madrid son:
 
 \begin{itemize}
-  \item Funciona 24 horas al día y 365 días al año.
+  \item Funciona 24 horas al día y 365 días al año \cite{madrid1}.
   \item Cuenta con 241 profesionales, a los que se suman otros 200 de otros cuerpos y servicios de emergencias que también tienen presencia en el mismo centro de operaciones.
   \item Atiende más de 4,5 millones de llamadas al año, según las últimas publicaciones, y el tiempo medio de respuesta, desde que se establece la llamada al 112 y el operador responde, es de tan solo 8 segundos. Y, que en 70 segundos, el operador ha enviado la emergencia al servicio correspondiente.
-  \item La sala de equipos está equipada con herramientas de integración de la telefonía en los puestos de trabajo (PCs), para facilitar el trabajo al operador de emergencias mediante el uso exclusivo de pantalla, teclado y ratón.
+  \item La sala de equipos está equipada con herramientas de integración de la telefonía en los puestos de trabajo (PCs), para facilitar el trabajo al operador de emergencias mediante el uso exclusivo de pantalla, teclado y ratón \cite{madrid4}.
   \item Tiene incorporado en su Sistema Integrado de Gestión de Emergencias (SIGE112) la app My112, permitiendo la localización del llamante mediante las coordenadas desde donde se está realizando la llamada.
   \item Su modelo 112 está diseñado con criterios de escalabilidad.
 \end{itemize}
@@ -48,16 +52,20 @@ Los aspectos más destacados del Centro 112 de Madrid son:
 Teniendo en cuenta esta información relevante, podemos definir los siguientes requisitos no funcionales que la solución software debe cumplir en todo momento:
 
 \begin{itemize}
-  \item Funcionamiento: durante 24 horas seguidas.
-  \item Participantes en la comunicación: entre dos o más personas.
-  \item Tiempo medio de respuesta: 8 segundos.
-  \item Duración media de la comunicación: 70 segundos.
-  \item Comunicaciones simultáneas: alrededor de 250.
+  \item \textbf{Funcionamiento}: durante 24 horas seguidas.
+  \item \textbf{Participantes en la comunicación}: entre dos o más personas.
+  \item \textbf{Tiempo medio de respuesta}: 8 segundos.
+  \item \textbf{Duración media de la comunicación}: 70 segundos.
+  \item \textbf{Comunicaciones simultáneas}: alrededor de 250.
 \end{itemize}
 
 \section{Diseño del protocolo de mensajería instantánea}
 
-Desde hace tiempo se sabe que XML es un formato obsoleto y fallido para la serialización de datos intercambiables. Aunque, proporciona todas las características que XMPP necesita, XML no deja de tener su parte de detractores. De hecho, hace algunos años, esto llevó al intento de proporcionar una codificación binaria para XMPP llamada Binary XMPP.
+Como se busca el desarrollo de una aplicación web de mensajería instantánea, un correcto diseño del protocolo de mensajería instantánea es crucial para este cometido. Este protocolo debería ser escalable y en una primera versión permitir como mínimo el envío de mensajes de texto entre usuarios previamente identificados.
+
+En un comunicación real en los centros 112, normalmente solo intervienen dos personas: el llamante y el operador que atiende la llamada. Pero en ocasiones, en la conversación intervienen otras personas como intérpretes. Por lo que es necesario que el protocolo a diseñar tenga en cuenta las conversaciones en grupo.
+
+Desde hace tiempo se sabe que XML es un formato obsoleto y fallido para la serialización de datos intercambiables. Aunque, proporciona todas las características que XMPP necesita, XML no deja de tener su parte de detractores. De hecho, hace algunos años, esto llevó al intento de proporcionar una codificación binaria para XMPP llamada Binary XMPP \cite{protocoloim3}.
 
 Desafortunadamente, la codificación binaria carecía de las principales ventajas de XML en su legibilidad humana, por lo que la búsqueda de mejores codificaciones nos lleva a JSON.
 
@@ -65,7 +73,7 @@ Por otro lado, si en nuestro proyecto no fuese crítico la comunicación inmedia
 
 \subsection{Mensajería instantánea grupal}
 
-Hoy en día, hay aplicaciones para casi cualquier cosa, incluidas aplicaciones como WhatsApp que te permiten conectarte con dos o más personas al mismo tiempo. Una de las características destacadas de estas aplicaciones de mensajería instantánea es que permiten que grupos grandes hablen y conversen al mismo tiempo. Conocidas como mensajería instantánea grupal, estas aplicaciones las ofrecen de forma predeterminada sin costo.
+Hoy en día, hay aplicaciones para casi cualquier cosa, incluidas aplicaciones como WhatsApp que te permiten conectarte con dos o más personas al mismo tiempo. Una de las características destacadas de estas aplicaciones de mensajería instantánea es que permiten que grupos grandes hablen y conversen al mismo tiempo \cite{im10}. Conocidas como mensajería instantánea grupal, estas aplicaciones las ofrecen de forma predeterminada sin costo.
 
 Dada la naturaleza competitiva de la industria, hay varias aplicaciones que realizan una función similar. Con la multitud de aplicaciones que existen, puede ser bastante difícil elegir una aplicación como base para nuestro desarrollo. Teniendo esto en cuenta, es esencial que nuestra aplicación permita como mínimo el envío de mensajes de texto en un grupo.
 
@@ -99,7 +107,7 @@ Un objeto JSON es un objeto válido en JavaScript por lo que es el formato perfe
 
 Una aplicación web en tiempo real requiere un esfuerzo de ingeniería muy grande. En un modelo tradicional son los clientes los que preguntan al servidor, lo que requiere poco trabajo por parte de éste. Las peticiones llegan y el servidor responde. Fácil y sencillo. El servidor no procesa más datos de los necesarios para dar la información que piden los clientes.
 
-Cuando pasamos al modelo del tiempo real, las cosas cambian. Ahora el servidor tiene que preocuparse de dar la información a los clientes cuando ésta se genera. Para ello necesita un registro de clientes que tienen que recibir esa información, así que no sólo tiene que procesar los datos relativos a la información que va a dar sino que además tiene que preocuparse de decidir con quién conectar y cuándo hacerlo. No sólo eso, también tiene que gestionar las conexiones y desconexiones del sistema. Es decir, un método mucho más complejo que el tradicional.
+Cuando pasamos al modelo del tiempo real, las cosas cambian. Ahora el servidor tiene que preocuparse de dar la información a los clientes cuando ésta se genera. Para ello necesita un registro de clientes que tienen que recibir esa información, así que no sólo tiene que procesar los datos relativos a la información que va a dar sino que además tiene que preocuparse de decidir con quién conectar y cuándo hacerlo. No sólo eso, también tiene que gestionar las conexiones y desconexiones del sistema. Es decir, un método mucho más complejo que el tradicional \cite{app9}.
 
 Con toda esa complejidad del tiempo real, alguna ventaja tenía que darnos. La primera es para los servidores. En una aplicación web tradicional, por ejemplo, si de repente los 200.000 clientes de un servicio deciden hacer una petición todos a la vez, el servidor puede bloquearse por saturación. Sin embargo, si son los servidores los que gestionan las conexiones estas situaciones no pueden ocurrir: el servidor distribuye de forma normal las conexiones de forma que no haya problemas de saturación, y evitando los ataques DDoS involuntarios.
 
@@ -109,7 +117,7 @@ Otra ventaja es que genera menos tráfico de red. Por ejemplo, si un cliente de 
 
 \subsection{REST}
 
-REST es una tecnología que transporta datos por medio del protocolo HTTP. Es tan flexible que permite transmitir prácticamente cualquier tipo de datos, ya que el tipo de datos está definido por la cabecera Content-Type, lo que nos permite mandar formatos como XML o JSON, binarios (imágenes, documentos), texto plano, entre otros más.
+REST es una tecnología que transporta datos por medio del protocolo HTTP. Es tan flexible que permite transmitir prácticamente cualquier tipo de datos, ya que el tipo de datos está definido por la cabecera Content-Type, lo que nos permite mandar formatos como XML o JSON, binarios (imágenes, documentos), texto plano, entre otros más \cite{rest1}.
 
 \begin{figure}[htp!]
   \centering
@@ -118,9 +126,9 @@ REST es una tecnología que transporta datos por medio del protocolo HTTP. Es ta
   \label{fig:rest}
 \end{figure}
 
-REST se caracteriza por no tener estado. Es decir, el servidor no es capaz de recordar el estado de la anterior solicitud REST que pudo, o no, hacer un cliente. Por ello, el cliente tiene que enviar en cada solicitud todo el estado de su sesión.
+REST se caracteriza por no tener estado. Es decir, el servidor no es capaz de recordar el estado de la anterior solicitud REST que pudo, o no, hacer un cliente. Por ello, el cliente tiene que enviar en cada solicitud todo el estado de su sesión \cite{web2}.
 
-REST viene para simplificar las cosas. Hoy REST y JSON se han convertido en la opción más sencilla y por tanto más recomendable para implementar una aplicación web.
+REST viene para simplificar las cosas. Hoy REST y JSON se han convertido en la opción más sencilla y por tanto más recomendable para implementar una aplicación web \cite{web2}.
 
 \subsection{Node.js}
 
@@ -134,13 +142,13 @@ Debido a sus altas prestaciones para gestionar y procesar grandes volúmenes sim
 
 \subsubsection{Beneficios de utilizar Node.js}
 
-Asumiendo que lo que interesa son las ventajas desde el punto de vista del desarrollo web, a continuación se definen las más significativas:
+Asumiendo que lo que interesa son las ventajas desde el punto de vista del desarrollo web, a continuación se definen las más significativas \cite{nodejs9}:
 
 \begin{itemize}
-  \item Escalabilidad de manera sencilla. Node.js se diseñó con una arquitectura dirigida por eventos y con E/S asíncrona desde el minuto 0. Eso hace que sea muy escalable de forma sencilla y directa.
-  \item Rendimiento. Gracias al motor V8 el uso de Javascript en Node.js supera a soluciones basadas en otros lenguajes “interpretados”.
-  \item Javascript. Node.js está basado en Javascript, que es un lenguaje que está de moda, en parte gracias al propio Node.js. Y además es el lenguaje de la web. El único soportado por todos los navegadores. Ahora que las aplicaciones web se han hecho muy interactivas y que es ingente la cantidad de código en Javascript que corre en los navegadores, es muy cómodo poder desarrollar con el mismo lenguaje en el servidor.
-  \item Popularidad. Como he mencionado todo esto ha llevado a que Node.js y Javascript gocen de gran popularidad. Cada vez hay más interés y más desarrolladores. Y eso hace que la comunidad sea enorme, lo que es muy interesante en caso de necesitar ayuda.
+  \item \textbf{Escalabilidad de manera sencilla}. Node.js se diseñó con una arquitectura dirigida por eventos y con E/S asíncrona desde el minuto 0. Eso hace que sea muy escalable de forma sencilla y directa.
+  \item \textbf{Rendimiento}. Gracias al motor V8 el uso de Javascript en Node.js supera a soluciones basadas en otros lenguajes “interpretados”.
+  \item \textbf{Javascript}. Node.js está basado en Javascript, que es un lenguaje que está de moda, en parte gracias al propio Node.js. Y además es el lenguaje de la web. El único soportado por todos los navegadores. Ahora que las aplicaciones web se han hecho muy interactivas y que es ingente la cantidad de código en Javascript que corre en los navegadores, es muy cómodo poder desarrollar con el mismo lenguaje en el servidor.
+  \item \textbf{Popularidad}. Como he mencionado todo esto ha llevado a que Node.js y Javascript gocen de gran popularidad. Cada vez hay más interés y más desarrolladores. Y eso hace que la comunidad sea enorme, lo que es muy interesante en caso de necesitar ayuda.
 \end{itemize}
 
 \subsubsection{Event Loop de Node.js}
@@ -171,13 +179,13 @@ En un proyecto Node.js, el código se organiza por módulos o paquetes, así que
   \label{fig:npm_logo}
 \end{figure}
 
-Node Package Manager, o simplemente npm, es un gestor de paquetes, el cual hará más fácil nuestras vidas al momento de trabajar con Node.js, ya que gracias a él podremos tener cualquier librería disponible con solo una línea de código. NPM nos ayudará a administrar nuestros módulos, distribuir paquetes y agregar dependencias de una manera sencilla.
+Node Package Manager, o simplemente npm, es un gestor de paquetes, el cual hará más fácil nuestras vidas al momento de trabajar con Node.js, ya que gracias a él podremos tener cualquier librería disponible con solo una línea de código. NPM nos ayudará a administrar nuestros módulos, distribuir paquetes y agregar dependencias de una manera sencilla \cite{npm1}.
 
 \subsubsection{Express.js}
 
 Muchos desarrolladores de software han optado por utilizar JavaScript para construir aplicaciones web. Esto ha provocado un crecimiento exponencial de los frameworks web para Node.js con el objetivo de facilitar la creación rápida de prototipos y la construcción de aplicaciones web impresionantes, especialmente en el lado del servidor.
 
-Los frameworks para Node.js se utilizan principalmente debido a su productividad, escalabilidad y velocidad, lo que los convierte en una de las primeras opciones para crear aplicaciones web para empresas.
+Los frameworks para Node.js se utilizan principalmente debido a su productividad, escalabilidad y velocidad, lo que los convierte en una de las primeras opciones para crear aplicaciones web para empresas \cite{nodejs5}.
 
 Al usar un framework, puedes trabajar con un conjunto de herramientas, directrices y prácticas recomendadas que lo ayudan a ahorrar tiempo. También puede ayudar a consolidar los estándares de código en un equipo de desarrolladores.
 
@@ -202,11 +210,11 @@ Algunas de las numerosas ventajas de Express.js incluyen:
 
 \subsection{MongoDB}
 
-Es muy común entre los desarrolladores de aplicaciones web encontrarse en la situación de tener que elegir si se va a usar una base de datos SQL o NoSQL. La mayoría no se lo piensa demasiado y opta por la opción que mejor conocen y con la que más cómodos trabajan. Tampoco es una decisión catastrófica; en realidad, ya sea una base de datos SQL o NoSQL, se puede construir cualquier cosa.
+Es muy común entre los desarrolladores de aplicaciones web encontrarse en la situación de tener que elegir si se va a usar una base de datos SQL o NoSQL. La mayoría no se lo piensa demasiado y opta por la opción que mejor conocen y con la que más cómodos trabajan. Tampoco es una decisión catastrófica; en realidad, ya sea una base de datos SQL o NoSQL, se puede construir cualquier cosa \cite{bd3}.
 
-Es importante saber en qué se diferencian y cuál deberíamos usar en cada caso, ya que un buen diseño de base de datos con la tecnología apropiada indudablemente aporta calidad al proyecto. Dependiendo de la naturaleza de la aplicación, interesa que la base de datos tenga unas características u otras.
+Es importante saber en qué se diferencian y cuál deberíamos usar en cada caso, ya que un buen diseño de base de datos con la tecnología apropiada indudablemente aporta calidad al proyecto. Dependiendo de la naturaleza de la aplicación, interesa que la base de datos tenga unas características u otras \cite{bd3}.
 
-La diferencia fundamental entre ambos tipos de base de datos radica en que las bases de datos NoSQL no hacen uso de un modelo relacional. Si tu proyecto necesita una escalabilidad importante, donde los recursos son escasos y no necesita respetar la integridad de los datos, entonces sí: NoSQL es la mejor opción.
+La diferencia fundamental entre ambos tipos de base de datos radica en que las bases de datos NoSQL no hacen uso de un modelo relacional. Si tu proyecto necesita una escalabilidad importante, donde los recursos son escasos y no necesita respetar la integridad de los datos, entonces sí: NoSQL es la mejor opción \cite{bd4}.
 
 A la hora de hacer una aplicación web, existen varias soluciones para cada uno de los grandes componentes que forman una aplicación completa. Si el servidor web está en Node.js, MongoDB es la base de datos NoSQL que tiene más éxito entre este tipo de aplicaciones.
 
@@ -219,14 +227,14 @@ A la hora de hacer una aplicación web, existen varias soluciones para cada uno 
 
 \subsubsection{Beneficios de MongoDB}
 
-Los siguientes son algunos de los beneficios y fortalezas de MongoDB:
+Los siguientes son algunos de los beneficios y fortalezas de MongoDB \cite{bd7}:
 
 \begin{itemize}
-  \item Esquema dinámico. como se mencionó, esto le brinda flexibilidad para el esquema de los datos sin modificar ninguno de los datos ya existentes.
-  \item Escabilidad. MongoDB es escalable horizontalmente, lo que ayuda a reducir la carga de trabajo y la escala de tu negocio con facilidad.
-  \item Capacidad de administración. la base de datos no requiere un administrador de base de datos. Ya que es bastante fácil de usar de esta manera, puede ser utilizado tanto por desarrolladores como por administradores.
-  \item Velocidad. Es de alto rendimiento para consultas simples.
-  \item Flexibilidad. puede agregar nuevas columnas o campos en MongoDB sin afectar las filas existentes o el rendimiento de la aplicación.
+  \item \textbf{Esquema dinámico}. Como se mencionó, esto le brinda flexibilidad para el esquema de los datos sin modificar ninguno de los datos ya existentes.
+  \item \textbf{Escabilidad}. MongoDB es escalable horizontalmente, lo que ayuda a reducir la carga de trabajo y la escala de tu negocio con facilidad.
+  \item \textbf{Capacidad de administración}. la base de datos no requiere un administrador de base de datos. Ya que es bastante fácil de usar de esta manera, puede ser utilizado tanto por desarrolladores como por administradores.
+  \item \textbf{Velocidad}. Es de alto rendimiento para consultas simples.
+  \item \textbf{Flexibilidad}. Puede agregar nuevas columnas o campos en MongoDB sin afectar las filas existentes o el rendimiento de la aplicación.
 \end{itemize}
 
 \subsection{Docker}
@@ -244,10 +252,10 @@ En cuanto al rendimiento, existen diferencias respecto a una virtualización de 
 Las ventajas de los contenedores Docker son:
 
 \begin{itemize}
-  \item Modularidad. El enfoque Docker para la creación de contenedores se centra en la capacidad de tomar una parte de una aplicación, para actualizarla o repararla, sin necesidad de tomar la aplicación completa.
-  \item Control de versiones de imágenes y capas. Cada archivo de imagen de Docker se compone de una serie de capas. Estas capas se combinan en una sola imagen. Una capa se crea cuando la imagen cambia. Docker reutiliza estas capas para construir nuevos contenedores, lo cual hace mucho más rápido el proceso de construcción.
-  \item Restauración. Probablemente la mejor parte de la creación de capas es la capacidad de restaurar. Si no te gusta la iteración actual de una imagen, restaura la versión anterior.
-  \item Implementación rápida. Solía demorar días desarrollar un nuevo hardware, ejecutarlo, proveerlo y facilitarlo. Y el nivel de esfuerzo y sobrecarga era extenuante. Los contenedores basados en Docker pueden reducir el tiempo de implementación a segundos.
+  \item \textbf{Modularidad}. El enfoque Docker para la creación de contenedores se centra en la capacidad de tomar una parte de una aplicación, para actualizarla o repararla, sin necesidad de tomar la aplicación completa.
+  \item \textbf{Control de versiones de imágenes y capas}. Cada archivo de imagen de Docker se compone de una serie de capas. Estas capas se combinan en una sola imagen. Una capa se crea cuando la imagen cambia. Docker reutiliza estas capas para construir nuevos contenedores, lo cual hace mucho más rápido el proceso de construcción.
+  \item \textbf{Restauración}. Probablemente la mejor parte de la creación de capas es la capacidad de restaurar. Si no te gusta la iteración actual de una imagen, restaura la versión anterior.
+  \item \textbf{Implementación rápida}. Solía demorar días desarrollar un nuevo hardware, ejecutarlo, proveerlo y facilitarlo. Y el nivel de esfuerzo y sobrecarga era extenuante. Los contenedores basados en Docker pueden reducir el tiempo de implementación a segundos.
 \end{itemize}
 
 \section{Diseño del entorno de pruebas}
@@ -256,7 +264,7 @@ Una vez que tengamos probada y desplegada nuestra aplicación, se debe probar de
 
 \subsection{Pruebas no funcionales}
 
-Las pruebas no funcionales se refieren a aspectos del software que pueden no estar relacionados con una función específica o acción del usuario, como la escalabilidad o el comportamiento bajo ciertas restricciones o la seguridad. Estas pruebas determinan el punto de ruptura, el punto en el que los extremos de escalabilidad o rendimiento llevan a una ejecución inestable.
+Las pruebas no funcionales se refieren a aspectos del software que pueden no estar relacionados con una función específica o acción del usuario, como la escalabilidad o el comportamiento bajo ciertas restricciones o la seguridad. Estas pruebas determinan el punto de ruptura, el punto en el que los extremos de escalabilidad o rendimiento llevan a una ejecución inestable \cite{test4}.
 
 Podemos clasificar las pruebas no funcionales según el tipo de requisito no funcional que abarcan:
 
@@ -268,7 +276,7 @@ Muchos proyectos utilizan un enfoque de caja negra para las pruebas de seguridad
 
 \subsubsection{Pruebas de usabilidad}
 
-Las pruebas de usabilidad son para verificar si la interfaz de usuario es fácil de usar y entender. Se refiere principalmente a la interacción con la aplicación. Este no es un tipo de prueba que se pueda automatizar; se necesitan usuarios reales, que sean monitoreados por diseñadores de interfaces de usuario expertos.
+Las pruebas de usabilidad son para verificar si la interfaz de usuario es fácil de usar y entender. Se refiere principalmente a la interacción con la aplicación. Este no es un tipo de prueba que se pueda automatizar; se necesitan usuarios reales, que sean monitoreados por diseñadores de interfaces de usuario expertos \cite{test4}.
 
 \subsubsection{Pruebas de rendimiento}
 
@@ -280,11 +288,11 @@ En aplicaciones web, las pruebas de rendimiento a menudo están estrechamente re
 
 \subsection{Diseño de pruebas de rendimiento}
 
-Las pruebas de rendimiento generalmente se ejecutan para determinar cómo se desempeña un sistema o subsistema en términos de capacidad de respuesta y estabilidad bajo una carga de trabajo en particular. Pero, también puede servir para investigar, medir, validar o verificar otros atributos de calidad del sistema, como la escalabilidad, la confiabilidad y el uso de recursos.
+Las pruebas de rendimiento generalmente se ejecutan para determinar cómo se desempeña un sistema o subsistema en términos de capacidad de respuesta y estabilidad bajo una carga de trabajo en particular. Pero, también puede servir para investigar, medir, validar o verificar otros atributos de calidad del sistema, como la escalabilidad, la confiabilidad y el uso de recursos \cite{jmeter6}.
 
 \subsubsection{Pruebas de carga}
 
-Las pruebas de carga se encarga principalmente de comprobar que el sistema puede continuar operando bajo una carga de trabajo específica, ya sea en grandes cantidades de datos o en una gran cantidad de peticiones. Esta carga puede ser el número esperado de usuarios concurrentes, que utilizando la aplicación realizan un número específico de transacciones durante el tiempo que dura la carga.
+Las pruebas de carga se encarga principalmente de comprobar que el sistema puede continuar operando bajo una carga de trabajo específica, ya sea en grandes cantidades de datos o en una gran cantidad de peticiones \cite{test4}. Esta carga puede ser el número esperado de usuarios concurrentes, que utilizando la aplicación realizan un número específico de transacciones durante el tiempo que dura la carga.
 
 Una prueba de carga puede mostrar los tiempos de respuesta de todas las transacciones importantes de la aplicación. Esto generalmente se conoce como escalabilidad de software.
 
@@ -292,9 +300,9 @@ Si también se monitorizan otros aspectos como la base de datos, el servidor de 
 
 \subsubsection{Pruebas de estrés}
 
-La prueba de estrés empuja los límites funcionales de un sistema. Se realiza sometiendo el sistema a condiciones extremas, como volúmenes de datos máximos o una gran cantidad de usuarios simultáneos. Se utiliza normalmente para romper la aplicación.
+La prueba de estrés empuja los límites funcionales de un sistema. Se realiza sometiendo el sistema a condiciones extremas, como volúmenes de datos máximos o una gran cantidad de usuarios simultáneos \cite{test5}. Se utiliza normalmente para romper la aplicación.
 
-Se va doblando el número de usuarios que se agregan a la aplicación y se ejecuta una prueba de carga hasta que se rompe. Esto ayuda a los administradores para determinar si la aplicación rendirá lo suficiente en caso de que la carga real supere a la carga esperada.
+Se va doblando el número de usuarios que se agregan a la aplicación y se ejecuta una prueba de carga hasta que se rompe \cite{jmeter6}. Esto ayuda a los administradores para determinar si la aplicación rendirá lo suficiente en caso de que la carga real supere a la carga esperada.
 
 También se utilizan para, llevado el sistema al colapso o degradación, comprobar su funcionamiento continuado por encima de su límite y, una vez liberado de la carga, evaluar su capacidad de resiliencia volviendo a su estado óptimo de funcionamiento.
 
@@ -312,7 +320,7 @@ En una organización en la que los sistemas de producción se apagan y reinician
 
 Existen numerosas herramientas, tanto open source como privadas, para realizar las pruebas de rendimiento: NeoLoad, LoadRunner, LoadUI, WebLOAD, Artillery, etcétera. Una de las más populares es Apache JMeter.
 
-Apache JMeter es una herramienta para llevar a cabo simulaciones sobre cualquier recurso de software. Es una herramienta creada por Apache y está completamente escrita en Java.
+Apache JMeter es una herramienta para llevar a cabo simulaciones sobre cualquier recurso de software. Es una herramienta creada por Apache y está completamente escrita en Java \cite{jmeter14}.
 
 \begin{figure}[htp!]
   \centering
@@ -321,8 +329,14 @@ Apache JMeter es una herramienta para llevar a cabo simulaciones sobre cualquier
   \label{fig:jmeter_logo}
 \end{figure}
 
-Apache Jmeter se suele usar para hacer pruebas de carga aunque también soporta aserciones para asegurar que los datos recibidos son correctos y muchas posibilidades a la hora de generar reportes.
+Apache Jmeter se suele usar para hacer pruebas de carga aunque también soporta aserciones para asegurar que los datos recibidos son correctos y muchas posibilidades a la hora de generar reportes \cite{jmeter14}.
+
+Pero esta herramiento, tiene algunas limiticaciones que intenta muchas veces solucionar añadiendo plugins que la comunidad desarrolla. Como la simulación de clientes WebSocket, entre otras.
 
 \subsubsection{Java}
 
-TODO
+Partiendo de las buenas prácticas y los conceptos que ofrece Apache JMeter, lo ideal sería crear una herramienta en Java que se ajuste mejor a las necesidades del plan de pruebas de rendimiento.
+
+Java es una buena opción para desarrollar un entorno de pruebas. A partir de su versión 8, ha simplificado mucho el manejo de grupos de hilos (threads) además de la creación de clientes HTTP y WebSocket.
+
+
